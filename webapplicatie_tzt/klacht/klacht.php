@@ -27,8 +27,8 @@ if (isset($_POST['verzenden'])) {
 	    $MESSAGE_BODY .= " Onderwerp: " . $_POST["onderwerp"] . "<BR>";
 	    $MESSAGE_BODY .= " Idee: " . nl2br($_POST["klacht"]) . "<BR>";
 	    // Mail verzenden
-	    mail($ToEmail, $EmailSubject, $MESSAGE_BODY, $mailheader) or die("<p> Er ging iets mis bij het verzenden van uw idee.</p>");
-	    ?> Het idee is verzonden. <?php
+	    mail($ToEmail, $EmailSubject, $MESSAGE_BODY, $mailheader) or die("<p> Er ging iets mis bij het verzenden van uw klacht.</p>");
+	    ?> De klacht is verzonden. <?php
 	}
     }
 } else {
