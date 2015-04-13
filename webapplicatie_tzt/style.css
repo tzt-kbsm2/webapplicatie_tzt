@@ -1,0 +1,15 @@
+.stappenbalk{
+    margin-bottom: 3%;
+    text-align: center;
+}
+.stappenbalk a {
+    color: #ff5800;
+    text-decoration: none;
+    font-size: 18px;
+}
+.stappenbalk b {
+    font-size: 20px;
+}
+.actief{
+   font-weight: bold;
+}
