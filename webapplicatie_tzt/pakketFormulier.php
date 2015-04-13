@@ -28,7 +28,7 @@ if(isset($_POST['Vorige'])){
         }
         ?>
 
-        <div class="container col-md-8" style="border: 1px solid black">
+        <div class="container col-md-10" style="border: 1px solid black">
             <div class="col-md-12 stappenbalk">
                 <!--stap 1  gegevens verzender / ontvanger-->
                 <a href="adresFormulier.php">Stap 1</a> 
@@ -40,11 +40,11 @@ if(isset($_POST['Vorige'])){
                 <a href="betalenFormulier.php">Stap 3</a>
                 <b>-</b>
                 <!--stap 4 bevestiging-->
-                <a href="">Stap 4</a>
+                <a href="bevestiging.php">Stap 4</a><br><br>
 
             </div>
 
-            <form class="form-horizontal col-md-8" method="POST" action="pakketFormulier.php">
+            <form class="form-horizontal col-md-8 m-l20" method="POST" action="pakketFormulier.php">
                 <div class="form-group">
                     <label class="col-sm-4 control-label"> Pakket grootte </label>
                     <div class="col-sm-6">
