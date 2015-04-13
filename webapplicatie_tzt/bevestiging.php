@@ -25,7 +25,11 @@ and open the template in the editor.
                 <b>-</b>
                 <!--stap 4 bevestiging-->
                 <a href="bevestiging"  class="actief">Stap 4</a><br><br>
-
+            </div>
+            <div>
+                <p>
+                    Bedankt voor het aanmelden van u pakket! Uw betaling is ontvangen en uw aanmelding wordt verwerkt.
+                </p>
             </div>
     </body>
 </html>

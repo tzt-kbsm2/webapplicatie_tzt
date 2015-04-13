@@ -1,8 +1,8 @@
 <?php
-if(isset($_POST['Vorige'])){
-   header("location: adresFormulier.php");
-    exit(); 
-}elseif(isset($_POST['Volgende'])){
+if (isset($_POST['Vorige'])) {
+    header("location: adresFormulier.php");
+    exit();
+} elseif (isset($_POST['Volgende'])) {
     header("location: betalenFormulier.php");
     exit();
 }
@@ -16,16 +16,39 @@ if(isset($_POST['Vorige'])){
     </head>
     <body>
         <?php
-        if(isset($POST['Volgende'])){
-            $Weight = $_POST['Gewicht'];
-            $Size = $_POST['Grootte'];
-            $CreationDate = date("d-m-Y h:i:sa");
-            // include'database.php';
-            $result = mysqli_query($link, "INSERT INTO Package (CreationDate,Size,Weight) VALUES('$CreationDate','$Size','$Weight')");
-//if(!$result){
-//	echo "FOUT: ".mysqli_error($link);
-//}
+        if (isset($POST['Volgende'])) {
+            $bedrijfzender = $_POST['BedrijfV'];
+            $bedrijfontvanger = "";
+            $voornaamzender = $_POST['FirstnameV'];
+            $voornaamontvanger = "";
+            $achternaamzender = "";
+            $achternaamontvanger = "";
+            $adreszender = "";
+            $adresontvanger = "";
+            $postcodezender = "";
+            $postcodeontvanger = "";
+            $plaatszender = "";
+            $plaatsontvanger = "";
+            $emailadreszender = "";
+            $emailadresontvanger = "";
+            $telefoonnummerzender = "";
+            $telefoonnummerontvanger = "";
+            mysqli_query($connect, "INSERT INTO  VALUES ('" . $bedrijfszender . "','" . $voornaamzender . "','" . $achternaamzender . "','" . $adreszender . "','" . $adreszender . "','" . $postcodezender . "','" . $plaatszender . "','" . $emailadreszender . "','" . $telefoonzender . "");
+            mysqli_query($connect, "INSERT INTO  VALUES ('" . $bedrijfsontvanger . "','" . $voornaamontvanger . "','" . $achternaamontvanger . "','" . $adresontvanger . "','" . $adresontvanger . "','" . $postcodeontvanger . "','" . $plaatsontvanger . "','" . $emailadresontvanger . "','" . $telefoonontvanger . "");
         }
+
+
+
+//        if(isset($POST['Volgende'])){
+//            $Weight = $_POST['Gewicht'];
+//            $Size = $_POST['Grootte'];
+//            $CreationDate = date("d-m-Y h:i:sa");
+//            // include'database.php';
+//            $result = mysqli_query($link, "INSERT INTO Package (CreationDate,Size,Weight) VALUES('$CreationDate','$Size','$Weight')");
+////if(!$result){
+////	echo "FOUT: ".mysqli_error($link);
+////}
+//        }
         ?>
 
         <div class="container col-md-10" style="border: 1px solid black">

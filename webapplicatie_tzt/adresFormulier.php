@@ -1,8 +1,8 @@
 <?php
-if(isset($_POST['Annuleren'])){
-   header("location: index.php");
-    exit(); 
-}elseif(isset($_POST['Volgende'])){
+if (isset($_POST['Annuleren'])) {
+    header("location: index.php");
+    exit();
+} elseif (isset($_POST['Volgende'])) {
     header("location: pakketFormulier.php");
     exit();
 }
@@ -50,10 +50,16 @@ if(isset($_POST['Annuleren'])){
             ?>
             <h4>Om uw pakket aan te melden dient u de volgende gegevens in te vullen.</h4><br><br>
             <div class="row">
-                <form method='POST' action='adresFormulier.php' class="form-horizontal">
+                <form method='POST' action='pakketFormulier.php' class="form-horizontal">
                     <div class="container col-md-6">
                         <h4>Verzender</h4><br>
 
+                        <div class="form-group">
+                            <label for="naam" class="col-sm-3 control-label">Bedrijf </label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control" placeholder="(optioneel)" name="BedrijfV" value="<?php print($bedrijfzender); ?>" required>
+                            </div>
+                        </div>
                         <div class="form-group">
                             <label for="naam" class="col-sm-3 control-label">Voornaam </label>
                             <div class="col-sm-9">
@@ -99,7 +105,13 @@ if(isset($_POST['Annuleren'])){
 
                     </div>
                     <div class="container col-md-6">
-                       <h4>Ontvanger</h4><br>
+                        <h4>Ontvanger</h4><br>
+                        <div class="form-group">
+                            <label for="naam" class="col-sm-3 control-label">Bedrijf </label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control" name="BedrijfO" placeholder="(optioneel)" value="<?php print($bedrijfontvanger); ?>" required>
+                            </div>
+                        </div>
                         <div class="form-group">
                             <label for="naam" class="col-sm-3 control-label">Voornaam </label>
                             <div class="col-sm-9">
@@ -130,21 +142,12 @@ if(isset($_POST['Annuleren'])){
                                 <input type="text" class="form-control" name="PlaatsV" value="<?php print($postcodeontvanger); ?>" required>
                             </div>
                         </div>
-                        <div class="form-group">
-                            <label for="naam" class="col-sm-3 control-label">E-mail</label>
-                            <div class="col-sm-9">
-                                <input type="email" class="form-control" name="EmailO" value="<?php print($emailadresontvanger); ?>" required>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="naam" class="col-sm-3 control-label">Telefoonnummer</label>
-                            <div class="col-sm-9">
-                                <input type="email" class="form-control" name="TelefoonnummerO" value="<?php print($telefoonnummerontvanger); ?>" required>
-                            </div>
-                        </div>
+
                     </div>
-                    <input style="float: right" class="btn btn-default" type="submit" value="Volgende" name="Volgende">
-                    <input style="float: right" class="btn btn-default" type="submit" value="Annuleren" name="Annuleren">
+                    <div class="container col-sm-12">
+                        <input style="float: right" class="btn btn-default" type="submit" value="Volgende" name="Volgende">
+                        <input style="float: right" class="btn btn-default" type="submit" value="Annuleren" name="Annuleren">
+                    </div>
                 </form>
             </div>
         </div>
