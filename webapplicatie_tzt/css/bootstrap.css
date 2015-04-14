@@ -27,10 +27,20 @@ footer{
     display: inline-block;
     margin-top:20px;
 }
-.bottommargin{
-    margin-bottom: 20px;
+.welkommargin{
+    margin: 40px 0px 40px 0px;
 }
-
+.welkommargin img{
+    display: inline-block;
+    float:right;
+    margin-top:20px;
+}
+.footerlink{
+    color:#333;
+}
+.footerlink:hover{
+    color:#ff5800;
+}
 /*! normalize.css v3.0.2 | MIT License | git.io/normalize */
 html {
 /*  font-family: sans-serif;
