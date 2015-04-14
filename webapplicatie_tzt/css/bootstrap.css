@@ -4950,6 +4950,9 @@ a.thumbnail.active {
     margin: 20px;
     text-align: justify;
 }
+.caption img{
+    margin: 20px;
+}
 .alert {
   padding: 15px;
   margin-bottom: 20px;
