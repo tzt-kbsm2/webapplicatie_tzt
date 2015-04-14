@@ -20,7 +20,7 @@ and open the template in the editor.
                 <label>Over</label>
                 <label>Online versturen</label>
                 <label>Contact</label>
-                <label><input type="submit" value="inloggen" name="Login"></label>
+                <label><input class="btn btn-default" type="submit" value="Inloggen" name="login"></label>
             </div>
         </header>
         <footer>
