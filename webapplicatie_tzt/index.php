@@ -14,14 +14,16 @@ and open the template in the editor.
         <div class="container">
             <header>
                 <div class="logo">
-                    <img src="image/logoTzt.jpg" alt="" width="" height=""/>
+                    <img src="image/logoTzt.jpg" alt="" width="" height="80"/>
                 </div>
                 <div id="menu">
-                    <label>Home</label>
-                    <label>Over</label>
-                    <label>Online versturen</label>
-                    <label>Contact</label>
-                    <label><button type="button" class="btn btn-primary btn-sm">Inloggen</button></label>
+                    <ul class="nav nav-pills">
+                        <li role="presentation" class="active"><a href="#">Home</a></li>
+                        <li role="presentation"><a href="#">Over</a></li>
+                        <li role="presentation"><a href="#">Online versturen</a></li>
+                        <li role="presentation"><a href="#">Contact</a></li>
+                        <li><button type="button" class="btn btn-primary">Inloggen</button></li>
+                    </ul>
                 </div>
             </header>
             <footer>
