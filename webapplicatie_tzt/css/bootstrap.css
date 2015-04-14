@@ -8,11 +8,12 @@
     Zelf toegevoegd.
 */
 header {
-    padding:20px,20px,0,0;
+    padding: 20px 0px 20px 0px;
 }
 #menu{
     float:right;
     display: inline-box;
+    margin-top:20px;
 }
 .logo{
     float:left;
@@ -3081,8 +3082,7 @@ fieldset[disabled] .btn-default.active {
 }
 .btn-primary {
   color: #fff;
-  background-color: #337ab7;
-  border-color: #2e6da4;
+  background-color: #ff5800;
 }
 .btn-primary:hover,
 .btn-primary:focus,
@@ -3091,8 +3091,7 @@ fieldset[disabled] .btn-default.active {
 .btn-primary.active,
 .open > .dropdown-toggle.btn-primary {
   color: #fff;
-  background-color: #286090;
-  border-color: #204d74;
+  opacity:0.8;
 }
 .btn-primary:active,
 .btn-primary.active,
@@ -3887,14 +3886,14 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .nav > li > a:hover,
 .nav > li > a:focus {
   text-decoration: none;
-  background-color: #eee;
+  border-bottom: 2px solid #ff5800;
 }
 .nav > li.disabled > a {
   color: #777;
 }
 .nav > li.disabled > a:hover,
 .nav > li.disabled > a:focus {
-  color: #777;
+  color: #fff;
   text-decoration: none;
   cursor: not-allowed;
   background-color: transparent;
@@ -3987,7 +3986,12 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   float: left;
 }
 .nav-pills > li > a {
-  border-radius: 4px;
+  border-radius: 0px;
+  color: #ff5800;
+}
+.nav-pills > li > a:hover {
+  border-radius: 4px 4px 0px 0px;
+  border-bottom: 2px solid #ff5800;
 }
 .nav-pills > li + li {
   margin-left: 2px;
@@ -3995,8 +3999,8 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .nav-pills > li.active > a,
 .nav-pills > li.active > a:hover,
 .nav-pills > li.active > a:focus {
-  color: #fff;
-  background-color: #337ab7;
+  color: #ff5800;
+  border-bottom: 2px solid #ff5800;
 }
 .nav-stacked > li {
   float: none;
