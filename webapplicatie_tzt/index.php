@@ -7,14 +7,25 @@ and open the template in the editor.
 <html>
     <head>
         <meta charset="UTF-8">
-        <title></title>
+        <link href="css/bootstrap.css" rel="stylesheet" type="text/css"/>
+        <title>Tzt WebApplicatie</title>
     </head>
     <body>
         <header>
             <div class="logo">
-                
+                <img src="image/logoTzt.jpg" alt="" width="" height=""/>
+            </div>
+            <div id="menu">
+                <label>Home</label>
+                <label>Over</label>
+                <label>Online versturen</label>
+                <label>Contact</label>
+                <label><input type="submit" value="inloggen" name="Login"></label>
             </div>
         </header>
+        <footer>
+            
+        </footer>
 	<?php
 	// put your code here
 	?>
