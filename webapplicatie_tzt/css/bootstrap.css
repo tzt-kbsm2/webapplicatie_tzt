@@ -8,18 +8,21 @@
     Zelf toegevoegd.
 */
 header {
-    padding: 20px 0px 20px 0px;
+    margin: 20px 0px 20px 0px;
 }
 #menu{
     float:right;
-    display: inline-box;
+    display: block;
     margin-top:20px;
 }
 .logo{
     float:left;
     display: inline-box;
 }
-
+#slider{
+    display: inline-block;
+    margin-top:20px;
+}
 /*! normalize.css v3.0.2 | MIT License | git.io/normalize */
 html {
 /*  font-family: sans-serif;
