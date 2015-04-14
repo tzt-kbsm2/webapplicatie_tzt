@@ -77,7 +77,7 @@ and open the template in the editor.
                             </p>
                         </div>
                         <div class="col-md-6">
-                            <img src="..." alt="..." height="120" width="120">
+                            <img src="image/WelkomTzt.png" alt=""/>
                         </div>
                     </div>
                 </div>
@@ -86,7 +86,7 @@ and open the template in the editor.
                       <div class="thumbnail">
                         <div class="caption">
                           <h3>Tarief berekenen</h3>
-                          <img src="..." alt="..." height="120" width="120">
+                          <img src="image/TariefBerekenen.png" alt=""/>
                           <p>Lorem Ipsum is slechts een proeftekst uit het drukkerij- en zetterijwezen. 
                               Lorem Ipsum is de standaard proeftekst in deze bedrijfstak sinds de 16e eeuw.</p>
                           <a href="#" class="btn btn-primary btn-lg" role="button">Berekenen</a>
@@ -97,7 +97,7 @@ and open the template in the editor.
                       <div class="thumbnail">
                         <div class="caption">
                           <h3>Koerier worden</h3>
-                          <img src="..." alt="..." height="120" width="120">
+                          <img src="image/KoerierWorden.png" alt=""/>
                           <p>Lorem Ipsum is slechts een proeftekst uit het drukkerij- en zetterijwezen. 
                               Lorem Ipsum is de standaard proeftekst in deze bedrijfstak sinds de 16e eeuw.</p>
                           <a href="#" class="btn btn-primary btn-lg" role="button">Registreren</a>
@@ -108,7 +108,7 @@ and open the template in the editor.
                       <div class="thumbnail">
                         <div class="caption">
                           <h3>Verzenden voor 3 uur!</h3>
-                          <img src="..." alt="..." height="120" width="120">
+                          <img src="image/VerzendenVoor3.png" alt=""/>
                           <p>Lorem Ipsum is slechts een proeftekst uit het drukkerij- en zetterijwezen. 
                               Lorem Ipsum is de standaard proeftekst in deze bedrijfstak sinds de 16e eeuw.</p>
                           <a href="#" class="btn btn-primary btn-lg" role="button">Lees meer</a>
