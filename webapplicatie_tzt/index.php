@@ -9,6 +9,7 @@ and open the template in the editor.
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
         <link href="css/bootstrap.css" rel="stylesheet" type="text/css"/>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
         <script src="js/bootstrap.js" type="text/javascript"></script>
         <title>Tzt WebApplicatie</title>
     </head>
@@ -24,7 +25,36 @@ and open the template in the editor.
                         <li role="presentation"><a href="#">Over</a></li>
                         <li role="presentation"><a href="#">Online versturen</a></li>
                         <li role="presentation"><a href="#">Contact</a></li>
-                        <li><button type="button" class="btn btn-primary">Inloggen</button></li>
+                        <li>
+                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#loginModal" data-whatever="Inloggen">Login</button>
+
+                            <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
+                              <div class="modal-dialog">
+                                <div class="modal-content">
+                                  <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                    <h4 class="modal-title" id="exampleModalLabel">Inloggen</h4>
+                                  </div>
+                                  <div class="modal-body">
+                                    <form>
+                                      <div class="form-group">
+                                        <label for="recipient-name" class="control-label">Gebruikersnaam:</label>
+                                        <input type="text" class="form-control" id="recipient-name">
+                                      </div>
+                                      <div class="form-group">
+                                        <label for="recipient-ww" class="control-label">Wachtwoord:</label>
+                                        <input type="password" class="form-control" id="recipient-ww">
+                                      </div>
+                                    </form>
+                                  </div>
+                                  <div class="modal-footer">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">Terug</button>
+                                    <button type="button" class="btn btn-primary">Inloggen</button>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                        </li>
                     </ul>
                 </div>
             </header>
@@ -46,18 +76,21 @@ and open the template in the editor.
                           Test bericht 1
                         </div>
                       </div>
+                        
                       <div class="item">
                         <img src="image/slide2.jpg" alt="...">
                         <div class="carousel-caption">
                           Test bericht 2
                         </div>
                       </div>
+                        
                       <div class="item">
                         <img src="image/slide3.jpg" alt="...">
                         <div class="carousel-caption">
                           Test bericht 3
                       </div>
                       </div>
+                        
                     </div>
                 </div>
             </div>
