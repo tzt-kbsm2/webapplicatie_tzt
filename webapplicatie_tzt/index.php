@@ -11,21 +11,23 @@ and open the template in the editor.
         <title>Tzt WebApplicatie</title>
     </head>
     <body>
-        <header>
-            <div class="logo">
-                <img src="image/logoTzt.jpg" alt="" width="" height=""/>
-            </div>
-            <div id="menu">
-                <label>Home</label>
-                <label>Over</label>
-                <label>Online versturen</label>
-                <label>Contact</label>
-                <label><input class="btn btn-default" type="submit" value="Inloggen" name="login"></label>
-            </div>
-        </header>
-        <footer>
-            
-        </footer>
+        <div class="container">
+            <header>
+                <div class="logo">
+                    <img src="image/logoTzt.jpg" alt="" width="" height=""/>
+                </div>
+                <div id="menu">
+                    <label>Home</label>
+                    <label>Over</label>
+                    <label>Online versturen</label>
+                    <label>Contact</label>
+                    <label><button type="button" class="btn btn-primary btn-sm">Inloggen</button></label>
+                </div>
+            </header>
+            <footer>
+
+            </footer>
+        </div>
 	<?php
 	// put your code here
 	?>
