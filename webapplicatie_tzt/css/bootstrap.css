@@ -12,7 +12,8 @@ header {
 }
 footer{
     background-color: #d1d3d4;
-    padding:20px;
+    padding:40px;
+    margin-top:40px;
 }
 #menu{
     float:right;
