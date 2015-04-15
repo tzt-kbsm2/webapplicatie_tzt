@@ -1,9 +1,9 @@
-<!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
+<?php
+if (isset($_POST['Vorige2'])) {
+    header("location: pakketFormulier.php");
+    exit();
+}
+?>
 <html>
     <head>
         <meta charset="UTF-8">
@@ -15,17 +15,26 @@ and open the template in the editor.
         <div class="container col-md-10" style="border: 1px solid black">
             <div class="col-md-12 stappenbalk">
                 <!--stap 1  gegevens verzender / ontvanger-->
-                <a href="adresFormulier.php">Stap 1</a> 
+                <a href="">Stap 1</a> 
                 <b>-</b>
                 <!--stap 2 pakket gegevens-->
-                <a href="pakketFormulier.php">Stap 2</a>
+                <a href="">Stap 2</a>
                 <b>-</b>
                 <!--stap 3 betalen-->
-                <a href="betalenFormulier.php">Stap 3</a>
+                <a href="">Stap 3</a>
                 <b>-</b>
                 <!--stap 4 bevestiging-->
-                <a href="bevestiging"  class="actief">Stap 4</a><br><br>
+                <a href="bevestiging.php"  class="actief">Stap 4</a><br><br>
             </div>
+            <?php
+            if(isset($_POST['Volgende2'])){
+            $to =$_POST['email'];
+            print($to);
+            $subject = "Verzendbevestiging";
+            $message="<p>Uw verzoek wordt bij ons verwerkt en wordt zo snel mogelijk bij u opgehaald </p>";
+            mail($to, $subject, $message);
+            }
+            ?>
             <div>
                 <p>
                     Bedankt voor het aanmelden van u pakket! Uw betaling is ontvangen en uw aanmelding wordt verwerkt.

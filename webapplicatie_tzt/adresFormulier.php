@@ -1,12 +1,3 @@
-<?php
-if (isset($_POST['Annuleren'])) {
-    header("location: index.php");
-    exit();
-} elseif (isset($_POST['Volgende'])) {
-    header("location: pakketFormulier.php");
-    exit();
-}
-?>
 <html>
     <head>
         <meta charset="UTF-8">
@@ -27,26 +18,41 @@ if (isset($_POST['Annuleren'])) {
                 <a href="betalenFormulier.php">Stap 3</a>
                 <b>-</b>
                 <!--stap 4 bevestiging-->
-                <a href="bevestiging.php">Stap 4</a><br><br>
+                <a href="">Stap 4</a><br><br>
 
             </div>
             <?php
-            $bedrijfzender = "";
-            $bedrijfontvanger = "";
-            $voornaamzender = "";
-            $voornaamontvanger = "";
-            $achternaamzender = "";
-            $achternaamontvanger = "";
-            $adreszender = "";
-            $adresontvanger = "";
-            $postcodezender = "";
-            $postcodeontvanger = "";
-            $plaatszender = "";
-            $plaatsontvanger = "";
-            $emailadreszender = "";
-            $emailadresontvanger = "";
-            $telefoonnummerzender = "";
-            $telefoonnummerontvanger = "";
+            if (isset($_POST['Vorige'])) {
+                $bedrijfzender = $_POST['BedrijfV'];
+                $bedrijfontvanger = $_POST['BedrijfO'];
+                $voornaamzender = $_POST['FirstnameV'];
+                $voornaamontvanger = $_POST['FirstnameO'];
+                $achternaamzender = $_POST['LastnameV'];
+                $achternaamontvanger = $_POST['LastnameO'];
+                $adreszender = $_POST['AdresV'];
+                $adresontvanger = $_POST['AdresO'];
+                $postcodezender = $_POST['PostcodeV'];
+                $postcodeontvanger = $_POST['PostcodeO'];
+                $plaatszender = $_POST['PlaatsV'];
+                $plaatsontvanger = $_POST['PlaatsO'];
+                $emailadreszender = $_POST['EmailV'];
+                $telefoonnummerzender = $_POST['TelefoonnumerV'];
+            } else {
+                $bedrijfzender = "";
+                $bedrijfontvanger = "";
+                $voornaamzender = "";
+                $voornaamontvanger = "";
+                $achternaamzender = "";
+                $achternaamontvanger = "";
+                $adreszender = "";
+                $adresontvanger = "";
+                $postcodezender = "";
+                $postcodeontvanger = "";
+                $plaatszender = "";
+                $plaatsontvanger = "";
+                $emailadreszender = "";
+                $telefoonnummerzender = "";
+            }
             ?>
             <h4>Om uw pakket aan te melden dient u de volgende gegevens in te vullen.</h4><br><br>
             <div class="row">
@@ -57,7 +63,7 @@ if (isset($_POST['Annuleren'])) {
                         <div class="form-group">
                             <label for="naam" class="col-sm-3 control-label">Bedrijf </label>
                             <div class="col-sm-9">
-                                <input type="text" class="form-control" placeholder="(optioneel)" name="BedrijfV" value="<?php print($bedrijfzender); ?>" required>
+                                <input type="text" class="form-control" placeholder="(optioneel)" name="BedrijfV" value="<?php print($bedrijfzender); ?>" >
                             </div>
                         </div>
                         <div class="form-group">
@@ -87,7 +93,7 @@ if (isset($_POST['Annuleren'])) {
                         <div class="form-group">
                             <label for="naam" class="col-sm-3 control-label">Plaats</label>
                             <div class="col-sm-9">
-                                <input type="text" class="form-control" name="PlaatsV" value="<?php print($postcodezender); ?>" required>
+                                <input type="text" class="form-control" name="PlaatsV" value="<?php print($plaatszender); ?>" required>
                             </div>
                         </div>
                         <div class="form-group">
@@ -99,7 +105,7 @@ if (isset($_POST['Annuleren'])) {
                         <div class="form-group">
                             <label for="naam" class="col-sm-3 control-label">Telefoonnummer</label>
                             <div class="col-sm-9">
-                                <input type="email" class="form-control" name="TelefoonnumerV" value="<?php print($telefoonnummerzender); ?>" required>
+                                <input type="tel" class="form-control" name="TelefoonnumerV" value="<?php print($telefoonnummerzender); ?>" required>
                             </div>
                         </div>
 
@@ -109,7 +115,7 @@ if (isset($_POST['Annuleren'])) {
                         <div class="form-group">
                             <label for="naam" class="col-sm-3 control-label">Bedrijf </label>
                             <div class="col-sm-9">
-                                <input type="text" class="form-control" name="BedrijfO" placeholder="(optioneel)" value="<?php print($bedrijfontvanger); ?>" required>
+                                <input type="text" class="form-control" name="BedrijfO" placeholder="(optioneel)" value="<?php print($bedrijfontvanger); ?>">
                             </div>
                         </div>
                         <div class="form-group">
@@ -139,7 +145,7 @@ if (isset($_POST['Annuleren'])) {
                         <div class="form-group">
                             <label for="naam" class="col-sm-3 control-label">Plaats</label>
                             <div class="col-sm-9">
-                                <input type="text" class="form-control" name="PlaatsV" value="<?php print($postcodeontvanger); ?>" required>
+                                <input type="text" class="form-control" name="PlaatsO" value="<?php print($plaatsontvanger); ?>" required>
                             </div>
                         </div>
 
@@ -151,11 +157,5 @@ if (isset($_POST['Annuleren'])) {
                 </form>
             </div>
         </div>
-        <?php
-        if (isset($_POST["doorgaan"])) {
-            mysqli_query($connect, "INSERT INTO  VALUES ('" . $bedrijfszender . "','" . $voornaamzender . "','" . $achternaamzender . "','" . $adreszender . "','" . $adreszender . "','" . $postcodezender . "','" . $plaatszender . "','" . $emailadreszender . "','" . $telefoonzender . "");
-            mysqli_query($connect, "INSERT INTO  VALUES ('" . $bedrijfsontvanger . "','" . $voornaamontvanger . "','" . $achternaamontvanger . "','" . $adresontvanger . "','" . $adresontvanger . "','" . $postcodeontvanger . "','" . $plaatsontvanger . "','" . $emailadresontvanger . "','" . $telefoonontvanger . "");
-        }
-        ?>
     </body>
 </html>
