@@ -1,8 +1,12 @@
 <?php
-
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
+$database = mysqli_connect("localhost","root","usbw","DBnaam komt hier",3306);
+        if($database)   
+        {
+            
+        }       
+        else 
+        {
+            print("Kan helaas geen verbinding maken");
+            print(mysqli_connect_error());
+        }
+?>
