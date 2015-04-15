@@ -9,8 +9,8 @@ if (isset($_POST['Annuleren'])) {
     <head>
         <meta charset="UTF-8">
         <title></title>
-        <link href="bootstrap.css" rel="stylesheet" type="text/css"/>
-        <link href="style.css" rel="stylesheet" type="text/css"/>
+        <link href="css/bootstrap.css" rel="stylesheet" type="text/css"/>
+        <link href="css/style.css" rel="stylesheet" type="text/css"/>
     </head>
     <body>
         <div class="container col-md-10" style="border: 1px solid black">
