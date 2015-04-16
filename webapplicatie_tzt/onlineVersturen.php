@@ -21,9 +21,9 @@ and open the template in the editor.
                 </div>
                 <div id="menu">
                     <ul class="nav nav-pills">
-                        <li role="presentation" class="active"><a href="index.php">Home</a></li>
+                        <li role="presentation" ><a href="index.php">Home</a></li>
                         <li role="presentation"><a href="#">Over</a></li>
-                        <li role="presentation"><a href="#">Online versturen</a></li>
+                        <li role="presentation" class="active"><a href="onlineVersturen.php">Online versturen</a></li>
                         <li role="presentation"><a href="contactPagina.php">Contact</a></li>
                         <li>
                             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#loginModal" data-whatever="Inloggen">Login</button>
@@ -59,55 +59,41 @@ and open the template in the editor.
                 </div>
             </div>
         </header>
-        <footer>
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-3">
-                        <h3>Contact</h3>
-                        <table>
-                            <tr><td><strong>TZT B.V.</strong></td></tr>
-                            <tr><td>Schoolstraat 10</td></tr>
-                            <tr><td>1700 AB</td></tr>
-                            <tr><td>Zwolle</td></tr>
-                            <tr><td><a class="footerlink" href="mailto:info@tzt.nl&subject=Ik%20heb%20een%20vraag" target="_top">Info@tzt.nl</a></td></tr>
-                            <tr><td>033 12 34 567</td></tr>
-                        </table>
-                    </div>
-                    <div class="col-md-3">
-                        <h3>Bedrijf</h3>
-                        <table>
-                            <tr><td><a class="footerlink" href="#">Over TNT</a></td></tr>
-                            <tr><td><a class="footerlink" href="#">TNT Corporate Website</a></td></tr>
-                            <tr><td><a class="footerlink" href="#">Vacatures</a></td></tr>
-                            <tr><td><a class="footerlink" href="#">Help</a></td></tr>
-                            <tr><td><a class="footerlink" href="#">Pers</a></td></tr>
-                            <tr><td><a class="footerlink" href="#">Algemene Voorwaarden</a></td></tr>
-                            <tr><td><a class="footerlink" href="#">Privacybeleid</a></td></tr>
-                        </table>
-                    </div>
-                    <div class="col-md-3">
-                        <h3>Diensten</h3>
-                        <table>
-                            <tr><td><a class="footerlink" href="#">Groen bezorgen</a></td></tr>
-                            <tr><td><a class="footerlink" href="#">Tijd- en daggegarandeerd</a></td></tr>
-                            <tr><td><a class="footerlink" href="#">Vracht</a></td></tr>
-                            <tr><td><a class="footerlink" href="#">Special Services</a></td></tr>
-                        </table>
-                    </div>
-                    <div class="col-md-3">
-                        <h3>Vind ons ook op:</h3>
-                        <table>
-                            <tr><td><a class="footerlink" href="http://www.facebook.nl" target="blank">Facebook</a></td></tr>
-                            <tr><td><a class="footerlink" href="http://www.twitter.com" target="blank">Twitter</a></td></tr>
-                            <tr><td><a class="footerlink" href="http://www.youtube.nl" target="blank">Youtube</a></td></tr>
-                            <tr><td><a class="footerlink" href="http://www.instagram.com" target="blank">Instagram</a></td></tr>
-                        </table>
-                    </div>
+        <div class="container">
+            <div class="col-sm-12 OV">
+                <div class="col-sm-6 OVlinks">
+                    <h4>Inloggen</h4>
+                    <form method="POST" class="form-horizontal" action="#">
+                        <div class="form-group">
+                            <label for="email" class="control-label col-sm-3">E-mail adres</label>
+                            <div class="col-sm-9">
+                                <input type="email" class="form-control" name="email">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="ww" class="control-label col-sm-3">Wachtwoord</label>
+                            <div class="col-sm-9">
+                                <input type="password" class="form-control" name="ww">
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary floatr" name="inloggen">Inloggen</button>
+                    </form>
+                </div>
+                <div class="col-sm-6 OVrechts">
+                    <h4>Registreren als klant</h4>
+                    <form action="registreren.php" class="form-horizontal" method="POST">
+                        <button type="submit" class="btn btn-primary" name="registreren">Registreren</button>
+                    </form>
+                    <hr>
+                    <form action="adresFormulier.php" class="form-horizontal" method="POST">
+                        <h4>Pakket aanmelden</h4>
+                        <button type="submit" class="btn btn-primary" name="aanmelden">Pakket aanmelden</button>
+                    </form>
                 </div>
             </div>
-        </footer>
-        <?php
-        // put your code here
+        </div>
+        <?php include 'footer.php'; 
         ?>
     </body>
 </html>
+         

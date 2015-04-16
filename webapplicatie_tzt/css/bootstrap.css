@@ -52,6 +52,9 @@ footer{
     text-decoration: none;
     font-size: 18px;
 }
+.stappenbalk a:hover{
+    text-decoration: none;
+}
 .stappenbalk b {
     font-size: 20px;
 }
@@ -79,6 +82,23 @@ footer{
 .formulierC{
     float: right;
     margin-bottom: 2%;
+}
+.floatr{
+    float: right;
+}
+.OV{
+    border: 1px solid #ddd;
+    border-radius: 2%;
+    margin-top: 5%;
+}
+.OVlinks{
+    border-right: 1px solid #ddd;
+    padding-right: 2%;
+    padding-bottom: 2%;
+    
+}
+.OVrechts{
+    
 }
 /*! normalize.css v3.0.2 | MIT License | git.io/normalize */
 html {
