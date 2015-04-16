@@ -14,12 +14,12 @@
                 mysqli_stmt_bind_result($stmt1, $package, $senddate, $deliverdate, $startlocation, $endlocation, $coeriertype);
                 while (mysqli_stmt_fetch($stmt1))
                 {
-                    echo '<td>'.$package.'</td>';
+                    echo '<tr><td>'.$package.'</td>';
                     echo '<td>'.$senddate.'</td>';
                     echo '<td>'.$deliverdate.'</td>';
                     echo '<td>'.$startlocation.'</td>';
                     echo '<td>'.$endlocation.'</td>';
-                    echo '<td>'.$coeriertype.'</td>';
+                    echo '<td>'.$coeriertype.'</td></tr>';
                 }
 
                 mysqli_close($database);
