@@ -1,8 +1,10 @@
 <?php
-
-                include "database.php";
+                echo "<table>";
+                
+                include "../database.php";
+                
                 $username = $_SESSION['Email'];
-                $password = $_SESSION['Password'];
+                //$password = $_SESSION['Password'];
 
                 $loginid = mysqli_prepare($database, "SELECT CustomerID FROM SendCustomer WHERE Email='$username'");
                 mysqli_stmt_execute($loginid);
@@ -21,7 +23,8 @@
                     echo '<td>'.$endlocation.'</td>';
                     echo '<td>'.$coeriertype.'</td></tr>';
                 }
-
+                echo"</table>";
+                
                 mysqli_close($database);
                 
 ?>
