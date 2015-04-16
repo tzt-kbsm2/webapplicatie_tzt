@@ -176,7 +176,7 @@ and open the template in the editor.
             } else {
                 $query = "SELECT emailadres FROM sendcostumer WHERE emailadres = '" . ($_POST["email"]) . "'"; //Controleert of de ingevoerde waarden al voorkomen in de database
 
-                $control = mysqli_query($connect, $query);
+                $control = mysqli_query($database, $query);
 
                 $result = mysqli_fetch_assoc($control);
                 if ($result['email'] == $_POST["email"]) {
@@ -185,9 +185,25 @@ and open the template in the editor.
                 }
                 $password = $_POST["password"];
                 $sha1pass = sha1($password);
-
-                mysqli_query($connect, "INSERT INTO sendcostumer VALUES ('" . $_POST["firstname"] . "','" . $_POST["lastname"] . "','" . $_POST["adress"] . "','" . $_POST["housenr"] . "','" . $_POST["city"] . "','" . $_POST["zipcode"] . "','" . $_POST["email"] . "','" . $_POST["companyname"] . "','" . $_POST["phone"] . "','" . $sha1pass . "')");
-
+                
+                $companyname = $_POST["companyname"];
+                $firstname = $_POST["firstname"];
+                $lastname = $_POST["lastname"];
+                $adress = $_POST["adress"];
+                $housenr = $_POST["housenr"];
+                $zipcode = $_POST["zipcode"];
+                $city = $_POST["city"];
+                $email = $_POST["email"];
+                $phone = $_POST["phone"];
+                
+                
+                $stmt = mysqli_prepare($database, "INSERT INTO sendcostumer VALUES (?,?,?,?,?,?,?,?,?,?)");
+                mysqli_stmt_bind_param($stmt, "ssssssssss", $firstname, $lastname, $adress, $housenr, $city, $zipcode,  $email, $companyname, $phone);
+                mysqli_prepare($database, $query);
+                mysqli_stmt_execute($stmt);
+                mysqli_stmt_free_result($stmt);
+                mysqli_stmt_close($stmt);
+                
                 Print("<font color='green'>U bent succesvol geregistreerd!</font><a href='login.php'>Inloggen</a>");
             }
         } end:
