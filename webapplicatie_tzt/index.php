@@ -21,7 +21,7 @@ and open the template in the editor.
                     </div>
                     <div id="menu">
                         <ul class="nav nav-pills">
-                            <li role="presentation" class="active"><a href="#">Home</a></li>
+                            <li role="presentation" class="active"><a href="index.php">Home</a></li>
                             <li role="presentation"><a href="#">Over</a></li>
                             <li role="presentation"><a href="#">Online versturen</a></li>
                             <li role="presentation"><a href="contactPagina.php">Contact</a></li>
