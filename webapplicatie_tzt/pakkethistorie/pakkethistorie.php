@@ -23,5 +23,5 @@
                 }
 
                 mysqli_close($database);
-
+                
 ?>
