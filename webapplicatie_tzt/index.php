@@ -74,22 +74,22 @@ and open the template in the editor.
                           <div class="item active">
                             <img src="image/slide1.jpg" alt="...">
                             <div class="carousel-caption">
-                              Test bericht 1
+                                <h2>Test bericht 1</h2>
                             </div>
                           </div>
 
                           <div class="item">
                             <img src="image/slide2.jpg" alt="...">
                             <div class="carousel-caption">
-                              Test bericht 2
+                                <h2>Test bericht 2</h2>
                             </div>
                           </div>
 
                           <div class="item">
                             <img src="image/slide3.jpg" alt="...">
                             <div class="carousel-caption">
-                              Test bericht 3
-                          </div>
+                                <h2>Test bericht 3</h2>
+                            </div>
                           </div>
 
                         </div>
