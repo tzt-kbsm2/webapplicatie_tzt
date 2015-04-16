@@ -8,7 +8,9 @@
     Zelf toegevoegd.
 */
 header {
-    margin: 20px 0px 20px 0px;
+    height: 120px;
+    padding: 20px 0px 0px 0px;
+    border-bottom:5px solid #ff5800;
 }
 footer{
     background-color: #d1d3d4;
@@ -26,7 +28,6 @@ footer{
 }
 #slider{
     display: inline-block;
-    margin-top:20px;
 }
 .welkommargin{
     margin: 40px 0px 40px 0px;
@@ -1161,12 +1162,12 @@ textarea {
   line-height: inherit;
 }
 a {
-  color: #337ab7;
+  color: #ff5800;
   text-decoration: none;
 }
 a:hover,
 a:focus {
-  color: #23527c;
+  color: #ff5800;
   text-decoration: underline;
 }
 a:focus {
@@ -6351,7 +6352,7 @@ button.close {
     padding-bottom: 30px;
   }
   .carousel-indicators {
-    bottom: 20px;
+    bottom: 0px;
   }
 }
 .clearfix:before,
