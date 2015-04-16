@@ -1,3 +1,4 @@
+<?php session_start();?>
 <!DOCTYPE html>
 <!--
 To change this license header, choose License Headers in Project Properties.
@@ -75,38 +76,22 @@ and open the template in the editor.
 
             </div>
             <?php
-            session_start();
-            if (isset($_POST['Vorige'])) {
-                $bedrijfzender = $_POST['BedrijfV'];
-                $bedrijfontvanger = $_POST['BedrijfO'];
-                $voornaamzender = $_POST['FirstnameV'];
-                $voornaamontvanger = $_POST['FirstnameO'];
-                $achternaamzender = $_POST['LastnameV'];
-                $achternaamontvanger = $_POST['LastnameO'];
-                $adreszender = $_POST['AdresV'];
-                $adresontvanger = $_POST['AdresO'];
-                $postcodezender = $_POST['PostcodeV'];
-                $postcodeontvanger = $_POST['PostcodeO'];
-                $plaatszender = $_POST['PlaatsV'];
-                $plaatsontvanger = $_POST['PlaatsO'];
-                $emailadreszender = $_POST['EmailV'];
-                $telefoonnummerzender = $_POST['TelefoonnumerV'];
-            } else {
-                $bedrijfzender = "";
-                $bedrijfontvanger = "";
-                $voornaamzender = "";
-                $voornaamontvanger = "";
-                $achternaamzender = "";
-                $achternaamontvanger = "";
-                $adreszender = "";
-                $adresontvanger = "";
-                $postcodezender = "";
-                $postcodeontvanger = "";
-                $plaatszender = "";
-                $plaatsontvanger = "";
-                $emailadreszender = "";
-                $telefoonnummerzender = "";
-            }
+
+                $bedrijfzender = $_SESSION['BedrijfV'];
+                $bedrijfontvanger = $_SESSION['BedrijfO'];
+                $voornaamzender = $_SESSION['FirstnameV'];
+                $voornaamontvanger = $_SESSION['FirstnameO'];
+                $achternaamzender = $_SESSION['LastnameV'];
+                $achternaamontvanger = $_SESSION['LastnameO'];
+                $adreszender = $_SESSION['AdresV'];
+                $adresontvanger = $_SESSION['AdresO'];
+                $postcodezender = $_SESSION['PostcodeV'];
+                $postcodeontvanger = $_SESSION['PostcodeO'];
+                $plaatszender = $_SESSION['PlaatsV'];
+                $plaatsontvanger = $_SESSION['PlaatsO'];
+                $emailadreszender = $_SESSION['EmailV'];
+                $telefoonnummerzender = $_SESSION['TelefoonnumerV'];
+                session_unset();
             ?>
             <h4>Om uw pakket aan te melden dient u de volgende gegevens in te vullen.</h4><br><br>
             <div class="row">
@@ -206,7 +191,7 @@ and open the template in the editor.
                     </div>
                     <div class="container col-sm-12">
                         <input class="btn btn-primary floatr" type="submit" value="Volgende" name="Volgende">
-                        <input class="btn btn-default floatr" type="submit" value="Annuleren" name="Annuleren">
+                        <input class="btn btn-default floatr buttonL" type="submit" value="Annuleren" name="Annuleren">
                     </div>
                 </form>
             </div>

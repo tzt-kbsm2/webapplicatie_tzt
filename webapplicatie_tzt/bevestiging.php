@@ -1,4 +1,4 @@
-<?php
+<?php session_start();
 if (isset($_POST['Vorige2'])) {
     header("location: pakketFormulier.php");
     exit();
@@ -75,7 +75,7 @@ if (isset($_POST['Vorige2'])) {
             </div>
             <?php
             if(isset($_POST['Volgende2'])){
-            $to =$_POST['email'];
+            $to =$_SESSION['email'];
             print($to);
             $subject = "Verzendbevestiging";
             $message="<p>Uw verzoek wordt bij ons verwerkt en wordt zo snel mogelijk bij u opgehaald </p>";

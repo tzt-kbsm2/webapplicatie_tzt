@@ -1,4 +1,4 @@
-<?php
+<?php session_start();
 if (isset($_POST['Vorige'])) {
     header("location: adresFormulier.php");
     exit();
@@ -76,8 +76,8 @@ if (isset($_POST['Vorige'])) {
 
             </div>
             <?php
+                $bedrag = 0;
             if (isset($POST['Volgende1'])) {
-                $emailadreszender = $_POST['email'];
                 $Weight = $_POST['Gewicht'];
                 $Size = $_POST['Grootte'];
                 $CreationDate = date("d-m-Y h:i:sa");
@@ -86,24 +86,34 @@ if (isset($_POST['Vorige'])) {
 //if(!$result){
 //	echo "FOUT: ".mysqli_error($link);
 //}
+                
             }
+            if($_POST['Verpakken'] == 'on'){
+                    $bedrag= $bedrag + 6;
+                }
             ?>
-            <div class="container col-sm-6 m-l35">
+            <div class="col-sm-6 m-l35">
+                <h4>Het volgende bedrag moet u betalen <?php print($bedrag);?> euro.</h4>
                 <form class="form-horizontal col-md-8" method="POST" action="bevestiging.php">
                     <h4>Hoe wilt u betalen?</h4>
-                    <label class="radio-inline">
-                        <input type="radio" name="inlineRadioOptions" name="Ideal" value="Ideal"> Ideal
-                    </label><br>
-                    <label class="radio-inline">
-                        <input type="radio" name="inlineRadioOptions" name="Factuur" value="Factuur"> Factuur
-                    </label><br>
-                     <input type="hidden" value="<?php print($emailadreszender); ?>" name="email">
+                    <br>
+                    <div class="col-sm-10">
+                        <select class="form-control" name="BetaalMethode" required>
+                            <option value="Ideal"> Ideal </option>
+                            <option value="Factuur"> Factuur </option>
+                        </select>
+                        <br>
+                    </div>
+                    
+                    <div>
                     <input class="btn btn-primary floatr" type="submit" value="Volgende" name="Volgende2">
-                    <input class="btn btn-default floatr" type="submit" value="Vorige" name="Vorige2">
+                    <input class="btn btn-default floatr buttonL" type="submit" value="Vorige" name="Vorige2">
+                    </div>
                 </form>
             </div>
         </div>
         <?php include 'footer.php';
+ session_unset();
         ?>
     </body>
 </html>

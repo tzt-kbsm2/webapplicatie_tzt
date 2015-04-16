@@ -79,7 +79,7 @@ and open the template in the editor.
                         <button type="submit" class="btn btn-primary floatr" name="inloggen">Inloggen</button>
                     </form>
                 </div>
-                <div class="col-sm-6 OVrechts">
+                <div class="col-sm-6">
                     <h4>Registreren als klant</h4>
                     <form action="registreren.php" class="form-horizontal" method="POST">
                         <button type="submit" class="btn btn-primary" name="registreren">Registreren</button>
