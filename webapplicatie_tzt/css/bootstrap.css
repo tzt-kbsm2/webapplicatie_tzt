@@ -42,6 +42,36 @@ footer{
 .footerlink:hover{
     color:#ff5800;
 }
+.stappenbalk{
+    margin-bottom: 3%;
+    text-align: center;
+}
+.stappenbalk a {
+    color: #ff5800;
+    text-decoration: none;
+    font-size: 18px;
+}
+.stappenbalk b {
+    font-size: 20px;
+}
+.actief{
+   font-weight: bold;
+}
+.m-l20 {
+    margin-left: 20%;
+}
+.m-l35{
+    margin-left: 35%;
+}
+.contact {
+    border: 1px solid #ddd;
+    border-radius: 2%;
+    margin-top: 5%;
+}
+.overOns{
+    margin-right: 8%;
+}
+
 /*! normalize.css v3.0.2 | MIT License | git.io/normalize */
 html {
 /*  font-family: sans-serif;
