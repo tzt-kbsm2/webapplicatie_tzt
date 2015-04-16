@@ -16,6 +16,7 @@ and open the template in the editor.
     <body>
         <div class="container">
             <header>
+                
                 <div class="logo">
                     <img src="image/logoTzt.jpg" alt="" width="" height="80"/>
                 </div>
@@ -24,7 +25,7 @@ and open the template in the editor.
                         <li role="presentation" class="active"><a href="#">Home</a></li>
                         <li role="presentation"><a href="#">Over</a></li>
                         <li role="presentation"><a href="#">Online versturen</a></li>
-                        <li role="presentation"><a href="#">Contact</a></li>
+                        <li role="presentation"><a href="contactPagina.php">Contact</a></li>
                         <li>
                             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#loginModal" data-whatever="Inloggen">Login</button>
 
@@ -57,6 +58,8 @@ and open the template in the editor.
                         </li>
                     </ul>
                 </div>
+                
+   
             </header>
             <div id="slider">
                 <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
