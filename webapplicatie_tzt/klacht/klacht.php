@@ -13,7 +13,6 @@ if (isset($_POST['verzenden'])) {
     // Wanneer op verzenden wordt gedrukt, wordt de captcha gecontrolleerd.
     if (empty($_SESSION['captcha_code']) || strcasecmp($_SESSION['captcha_code'], $_POST['captcha_code']) != 0) {
 	?> <span>Helaas, de ingevoerde code is onjuist! Klik <a href="klacht.php">hier</a> om terug te gaan naar het klachtenformulier.</span> <?php
-	echo $_SESSION['captcha_code'];
     } else {// Captcha is correct ingevuld, het formulier wordt nu verzonden.
 	if (isset($_POST['verzenden'])) {
 	    $ToEmail = 'eric.h@live.nl'; // Naar welke e-mail moet het idee gestuurd worden?
@@ -25,7 +24,7 @@ if (isset($_POST['verzenden'])) {
 	    $MESSAGE_BODY = "Naam: " . $_POST['naam'] . "<BR>";
 	    $MESSAGE_BODY .= " Email: " . $_POST["email"] . "<BR>";
 	    $MESSAGE_BODY .= " Onderwerp: " . $_POST["onderwerp"] . "<BR>";
-	    $MESSAGE_BODY .= " Idee: " . nl2br($_POST["klacht"]) . "<BR>";
+	    $MESSAGE_BODY .= " Klacht: " . nl2br($_POST["klacht"]) . "<BR>";
 	    // Mail verzenden
 	    mail($ToEmail, $EmailSubject, $MESSAGE_BODY, $mailheader) or die("<p> Er ging iets mis bij het verzenden van uw klacht.</p>");
 	    ?> De klacht is verzonden. <?php
