@@ -122,6 +122,13 @@ footer{
 .betalenTabel th{
     padding: 1%;
 }
+.slider{
+ height:500px;   
+}
+.carousel-caption{
+    background-color: rgba(255,255,255,0.5);
+    
+}
 /*! normalize.css v3.0.2 | MIT License | git.io/normalize */
 html {
 /*  font-family: sans-serif;
@@ -6360,9 +6367,9 @@ button.close {
 }
 .carousel-caption {
   position: absolute;
-  right: 15%;
-  bottom: 20px;
-  left: 15%;
+  bottom: 200px;
+  right: 50%;
+  left: 5%;
   z-index: 10;
   padding-top: 20px;
   padding-bottom: 20px;
