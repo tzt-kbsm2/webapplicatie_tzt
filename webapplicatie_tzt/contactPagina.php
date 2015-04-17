@@ -65,7 +65,7 @@ and open the template in the editor.
                     <ul class="nav nav-pills">
                         <li role="presentation"><a href="index.php">Home</a></li>
                         <li role="presentation"><a href="#">Over</a></li>
-                        <li role="presentation"><a href="#">Online versturen</a></li>
+                        <li role="presentation"><a href="onlineVersturen.php">Online versturen</a></li>
                         <li role="presentation" class="active"><a href="contactPagina.php">Contact</a></li>
                         <li>
                             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#loginModal" data-whatever="Inloggen">Login</button>
