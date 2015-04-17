@@ -54,6 +54,8 @@
             </div>
         </header>
         <?php
+        $database = mysqli_connect("localhost", "root", "usbw", "tztdb", 3307);
+
         include 'database.php';
         if (!isset($_POST["registreren"])) {
             ?>
@@ -217,7 +219,7 @@
             </div>
             </form>");
             } else {
-                $query = "SELECT Email FROM sendcostumer WHERE Email = '" . ($_POST["email"]) . "'"; //Controleert of de ingevoerde waarden al voorkomen in de database
+                $query = "SELECT Email FROM sendcustomer WHERE Email = '" . ($_POST["email"]) . "'"; //Controleert of de ingevoerde waarden al voorkomen in de database
 
                 $control = mysqli_query($database, $query);
 
@@ -239,13 +241,12 @@
                 $email = $_POST["email"];
                 $phone = $_POST["phone"];
 
-
-                $stmt = mysqli_prepare($database, "INSERT INTO sendcostumer VALUES (?,?,?,?,?,?,?,?,?,?)");
-                mysqli_stmt_bind_param($stmt, "ssssssssss", $firstname, $lastname, $adress, $housenr, $city, $zipcode, $email, $companyname, $phone);
-                mysqli_prepare($database, $query);
-                mysqli_stmt_execute($stmt);
-                mysqli_stmt_free_result($stmt);
-                mysqli_stmt_close($stmt);
+                $insertquery = "INSERT INTO sendcustomer (FirstName, LastName, Adress, HouseNr, City, Postalcode, Email, CompanyName, Telephone, Password) VALUES (?,?,?,?,?,?,?,?,?,?)";
+                $insertstmt = mysqli_prepare($database, $insertquery);
+                mysqli_stmt_bind_param($insertstmt, "sssissssis", $firstname, $lastname, $adress, $housenr, $city, $zipcode, $email, $companyname, $phone, $sha1pass);
+                mysqli_stmt_execute($insertstmt);
+                mysqli_stmt_free_result($insertstmt);
+                mysqli_stmt_close($insertstmt);
 
                 Print("<font color='green'>U bent succesvol geregistreerd!</font><a href='login.php'>Inloggen</a>");
             }
@@ -254,3 +255,4 @@
         ?>
     </body>
 </html>
+
