@@ -15,8 +15,8 @@
                     <div class="col-md-3">
                         <h3>Bedrijf</h3>
                         <table>
-                            <tr><td><a class="footerlink" href="#">Over TNT</a></td></tr>
-                            <tr><td><a class="footerlink" href="#">TNT Corporate Website</a></td></tr>
+                            <tr><td><a class="footerlink" href="overOns.php">Over TZT</a></td></tr>
+                            <tr><td><a class="footerlink" href="klacht/klacht.php">Klachten</a></td></tr>
                             <tr><td><a class="footerlink" href="#">Vacatures</a></td></tr>
                             <tr><td><a class="footerlink" href="#">Help</a></td></tr>
                             <tr><td><a class="footerlink" href="#">Pers</a></td></tr>
