@@ -12,10 +12,10 @@
                 mysqli_stmt_bind_result($loginid, $customerid);
                 mysqli_stmt_fetch($loginid);
                 
-                $stmt1 = mysqli_prepare($database, "SELECT PackageID, SendDate, DeliverDate, StartLocation, EndLocation, CoerierType FROM Package P JOIN SendCustomer S ON P.PackageID = S.CustomerID WHERE S.CustomerID = $customerid");
+                $stmt1 = mysqli_prepare($database, "SELECT PackageID, SendDate, DeliverDate, StartLocation, EndLocation, CoerierType FROM Package P JOIN SendCustomer S ON P.PackageID = S.CustomerID WHERE S.CustomerID = $customeri");
                 mysqli_stmt_execute($stmt1);
                 mysqli_stmt_bind_result($stmt1, $package, $senddate, $deliverdate, $startlocation, $endlocation, $coeriertype);
-                while (mysqli_stmt_fetch($stmt1))
+                while(mysqli_stmt_fetch($stmt1))
                 {
                     echo '<tr><td>'.$package.'</td>';
                     echo '<td>'.$senddate.'</td>';
