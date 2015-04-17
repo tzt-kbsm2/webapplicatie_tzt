@@ -217,18 +217,18 @@
             </div>
             </form>");
             } else {
-                $query = "SELECT emailadres FROM sendcostumer WHERE emailadres = '" . ($_POST["email"]) . "'"; //Controleert of de ingevoerde waarden al voorkomen in de database
+                $query = "SELECT Email FROM sendcostumer WHERE Email = '" . ($_POST["email"]) . "'"; //Controleert of de ingevoerde waarden al voorkomen in de database
 
                 $control = mysqli_query($database, $query);
 
                 $result = mysqli_fetch_assoc($control);
-                if ($result['email'] == $_POST["email"]) {
+                if ($result['Email'] == $_POST["email"]) {
                     print ("<br><font color='orange'>Dit e-mailadres is reeds bekend in ons systeem!</font>");
                     goto end;
                 }
                 $password = $_POST["password"];
                 $sha1pass = sha1($password);
-                
+
                 $companyname = $_POST["companyname"];
                 $firstname = $_POST["firstname"];
                 $lastname = $_POST["lastname"];
@@ -238,18 +238,19 @@
                 $city = $_POST["city"];
                 $email = $_POST["email"];
                 $phone = $_POST["phone"];
-                
-                
+
+
                 $stmt = mysqli_prepare($database, "INSERT INTO sendcostumer VALUES (?,?,?,?,?,?,?,?,?,?)");
-                mysqli_stmt_bind_param($stmt, "ssssssssss", $firstname, $lastname, $adress, $housenr, $city, $zipcode,  $email, $companyname, $phone);
+                mysqli_stmt_bind_param($stmt, "ssssssssss", $firstname, $lastname, $adress, $housenr, $city, $zipcode, $email, $companyname, $phone);
                 mysqli_prepare($database, $query);
                 mysqli_stmt_execute($stmt);
                 mysqli_stmt_free_result($stmt);
                 mysqli_stmt_close($stmt);
-                
+
                 Print("<font color='green'>U bent succesvol geregistreerd!</font><a href='login.php'>Inloggen</a>");
             }
         } end:
+        include 'footer.php';
         ?>
     </body>
 </html>
