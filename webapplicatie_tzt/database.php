@@ -1,5 +1,5 @@
 <?php
-$database = mysqli_connect("localhost","root","usbw","TZTDB",3307);
+$database = mysqli_connect("localhost","root","usbw","TZTDB",3306);
         if($database)   
         {
             
