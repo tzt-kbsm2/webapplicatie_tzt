@@ -76,8 +76,7 @@ if (isset($_POST['Annuleren'])) {
 
             </div>
             <?php
-            if (isset($_POST['Volgende'])) {
-                $_SESSION['BedrijfV'] = $_POST['BedrijfV'];
+            $_SESSION['BedrijfV'] = $_POST['BedrijfV'];
                 $_SESSION['BedrijfO'] = $_POST['BedrijfO'];
                 $_SESSION['FirstnameV'] = $_POST['FirstnameV'];
                 $_SESSION['FirstnameO'] = $_POST['FirstnameO'];
@@ -91,7 +90,9 @@ if (isset($_POST['Annuleren'])) {
                 $_SESSION['PlaatsO'] = $_POST['PlaatsO'];
                 $_SESSION['EmailV'] = $_POST['EmailV'];
                 $_SESSION['TelefoonnumerV'] = $_POST['TelefoonnumerV'];
+                
 
+            if (isset($_POST['Volgende'])) {
                 $bedrijfzender = $_POST['BedrijfV'];
                 $bedrijfontvanger = $_POST['BedrijfO'];
                 $voornaamzender = $_POST['FirstnameV'];
@@ -112,6 +113,21 @@ if (isset($_POST['Annuleren'])) {
 //                if (!$result) {
 //                    echo "FOUT: " . mysqli_error($link);
 //                }
+            }
+                             $bedrijfzender = $_SESSION['BedrijfV'];
+                $bedrijfontvanger = $_SESSION['BedrijfO'];
+                $voornaamzender = $_SESSION['FirstnameV'];
+                $voornaamontvanger = $_SESSION['FirstnameO'];
+                $achternaamzender = $_SESSION['LastnameV'];
+                $achternaamontvanger = $_SESSION['LastnameO'];
+                $adreszender = $_SESSION['AdresV'];
+                $adresontvanger = $_SESSION['AdresO'];
+                $postcodezender = $_SESSION['PostcodeV'];
+                $postcodeontvanger = $_SESSION['PostcodeO'];
+                $plaatszender = $_SESSION['PlaatsV'];
+                $plaatsontvanger = $_SESSION['PlaatsO'];
+                $emailadreszender = $_SESSION['EmailV'];
+                $telefoonnummerzender = $_SESSION['TelefoonnumerV'];
                 ?>
                 <div class="col-md-8 m-l20">
                     <h4>Controleer hier u gegevens.</h4>
@@ -128,11 +144,7 @@ if (isset($_POST['Annuleren'])) {
                         <tr><td>Telefoonnummer</td><td><?php print($telefoonnummerzender); ?></td><td></td></tr>
                     </table>
                 </div>
-                <?php
-            }
-            ?>
-
-            <form class="form-horizontal col-md-10 m-l20" method="GET" action="betalenFormulier.php">
+            <form class="form-horizontal col-md-10 m-l20" method="POST" action="betalenFormulier.php">
                 <h4>Selecteer hier de grootte en het gewicht van u pakket. </h4><br>
                 <div class="form-group">
                     <label class="col-sm-4 control-label"> Pakket grootte </label>
@@ -156,13 +168,21 @@ if (isset($_POST['Annuleren'])) {
                 <h4>Verpakken van het pakket</h4>
                 <p> TZT biedt de service om voor u het pakket te verpakken, als u dit niet wilt moet u er zelf voor zorgen dat het pakket wordt verpakt. 
                     Als het pakket fragiel is vermeld dit dan duidelijk.</p>
-                <div class='checkbox'>
+                <div class='checkbox' required>
                     <label>
-                        <input type="checkbox" name='Verpakken' value="on"> Laat het pakket verpakken door TZT voor 6 euro. 
-                    </label><br>
-                    <label>
-                        <input type="checkbox" name='Verpakken' value="off"> Ik pak zelf het pakket in.
-                    </label>
+                        <?php
+                        
+                        if ($_SESSION['Verpakken'] == 'on') {
+                            ?>
+                        <input type="checkbox" name='Verpakken' value="on" checked> Laat het pakket verpakken door TZT (+ €6,00). 
+                        <?php
+                        }else{
+                            ?>
+                         <input type="checkbox" name='Verpakken' value="on"> Laat het pakket verpakken door TZT (+ €6,00). 
+                         <?php
+                        }
+                        ?>
+                        </label>
                 </div><br>
                 <input class="btn btn-primary floatr" type="submit" value="Volgende" name="Volgende1">
                 <input class="btn btn-default floatr buttonL" type="submit" value="Vorige" name="Vorige">

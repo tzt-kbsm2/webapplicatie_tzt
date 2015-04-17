@@ -1,9 +1,9 @@
-<!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
+<?php
+if (isset($_POST['Vorige3'])) {
+    header("location: betalenFormulier.php");
+    exit();
+}
+?>
 <html>
     <head>
         <meta charset="UTF-8">
@@ -60,40 +60,51 @@ and open the template in the editor.
             </div>
         </header>
         <div class="container">
-            <div class="col-sm-12 OV">
-                <div class="col-sm-6 OVlinks">
-                    <h4>Inloggen</h4>
-                    <form method="POST" class="form-horizontal" action="#">
-                        <div class="form-group">
-                            <label for="email" class="control-label col-sm-3">E-mail adres</label>
-                            <div class="col-sm-9">
-                                <input type="email" class="form-control" name="email">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="ww" class="control-label col-sm-3">Wachtwoord</label>
-                            <div class="col-sm-9">
-                                <input type="password" class="form-control" name="ww">
-                            </div>
-                        </div>
-                        <button type="submit" class="btn btn-primary floatr" name="inloggen">Inloggen</button>
-                    </form>
-                </div>
-                <div class="col-sm-6">
-                    <h4>Registreren als klant</h4>
-                    <form action="registreren.php" class="form-horizontal" method="POST">
-                        <button type="submit" class="btn btn-primary" name="registreren">Registreren</button>
-                    </form>
-                    <hr>
-                    <form action="adresFormulier.php" class="form-horizontal" method="POST">
-                        <h4>Pakket aanmelden</h4>
-                        <button type="submit" class="btn btn-primary" name="aanmelden">Pakket aanmelden</button>
-                    </form>
-                </div>
+            <?php
+            if (isset($_POST['Afronden'])) {
+                ?>
+            <div class="col-sm-12 OV2">
+                <h3>Bedankt voor u bestelling, u krijgt nu een mail met informatie over het pakket.</h3>
             </div>
+            <?php
+            } else {
+                ?>
+                <div class="col-sm-12 OV">
+                    <div class="col-sm-6 OVlinks">
+                        <h4>Inloggen</h4>
+                        <form method="POST" class="form-horizontal" action="#">
+                            <div class="form-group">
+                                <label for="email" class="control-label col-sm-3">E-mail adres</label>
+                                <div class="col-sm-9">
+                                    <input type="email" class="form-control" name="email">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="ww" class="control-label col-sm-3">Wachtwoord</label>
+                                <div class="col-sm-9">
+                                    <input type="password" class="form-control" name="ww">
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-primary floatr" name="inloggen">Inloggen</button>
+                        </form>
+                    </div>
+                    <div class="col-sm-6">
+                        <h4>Registreren als klant</h4>
+                        <form action="registreren.php" class="form-horizontal" method="POST">
+                            <button type="submit" class="btn btn-primary" name="registreren">Registreren</button>
+                        </form>
+                        <hr>
+                        <form action="adresFormulier.php" class="form-horizontal" method="POST">
+                            <h4>Pakket aanmelden</h4>
+                            <button type="submit" class="btn btn-primary" name="aanmelden">Pakket aanmelden</button>
+                        </form>
+                    </div>
+                </div>
+                <?php
+            }
+            ?>
         </div>
-        <?php include 'footer.php'; 
-        ?>
+            <?php include 'footer.php';
+            ?>
     </body>
 </html>
-         

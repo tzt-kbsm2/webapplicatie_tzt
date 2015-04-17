@@ -92,6 +92,11 @@ footer{
     border-radius: 2%;
     margin-top: 5%;
 }
+.OV2 {
+   margin-top: 15%; 
+   margin-bottom: 15%;
+   margin-left: 10%;
+}
 .OVlinks{
     border-right: 1px solid #ddd;
     padding-right: 2%;
@@ -100,6 +105,19 @@ footer{
 }
 .buttonL {
     margin-right: 1%;
+}
+.tabelBorder {
+    border-bottom: 1px solid #ddd;
+}
+.tabelBorderBold td {
+    border-bottom: 3px solid #ddd;
+}
+.betalenTabel td{
+    padding:1%;
+    width: 50%; 
+}
+.betalenTabel th{
+    padding: 1%;
 }
 /*! normalize.css v3.0.2 | MIT License | git.io/normalize */
 html {

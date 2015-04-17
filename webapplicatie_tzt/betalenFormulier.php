@@ -76,7 +76,6 @@ if (isset($_POST['Vorige'])) {
 
             </div>
             <?php
-                $bedrag = 0;
             if (isset($POST['Volgende1'])) {
                 $Weight = $_POST['Gewicht'];
                 $Size = $_POST['Grootte'];
@@ -88,24 +87,21 @@ if (isset($_POST['Vorige'])) {
 //}
                 
             }
-            if($_POST['Verpakken'] == 'on'){
-                    $bedrag= $bedrag + 6;
-                }
+            $_SESSION['Verpakken'] = $_POST['Verpakken'];
             ?>
-            <div class="col-sm-6 m-l35">
-                <h4>Het volgende bedrag moet u betalen <?php print($bedrag);?> euro.</h4>
-                <form class="form-horizontal col-md-8" method="POST" action="bevestiging.php">
+           <div class="col-sm-6 m-l35">
+                <form class="form-horizontal" method="POST" action="bevestiging.php">
                     <h4>Hoe wilt u betalen?</h4>
                     <br>
-                    <div class="col-sm-10">
+                    <div class="col-sm-5">
                         <select class="form-control" name="BetaalMethode" required>
                             <option value="Ideal"> Ideal </option>
-                            <option value="Factuur"> Factuur </option>
+                            <option value="Factuur"> Factuur (+ €2,00)</option>
                         </select>
                         <br>
                     </div>
                     
-                    <div>
+                    <div class="col-md-12">
                     <input class="btn btn-primary floatr" type="submit" value="Volgende" name="Volgende2">
                     <input class="btn btn-default floatr buttonL" type="submit" value="Vorige" name="Vorige2">
                     </div>
@@ -113,7 +109,7 @@ if (isset($_POST['Vorige'])) {
             </div>
         </div>
         <?php include 'footer.php';
- session_unset();
+
         ?>
     </body>
 </html>

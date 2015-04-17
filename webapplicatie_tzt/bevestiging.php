@@ -62,13 +62,13 @@ if (isset($_POST['Vorige2'])) {
         <div class="container">
             <div class="col-md-12 stappenbalk">
                 <!--stap 1  gegevens verzender / ontvanger-->
-                <a href="">Stap 1</a> 
+                <a href="adresFormulier.php">Stap 1</a> 
                 <b>-</b>
                 <!--stap 2 pakket gegevens-->
-                <a href="">Stap 2</a>
+                <a href="pakketFormulier.php">Stap 2</a>
                 <b>-</b>
                 <!--stap 3 betalen-->
-                <a href="">Stap 3</a>
+                <a href="betalenFormulier.php">Stap 3</a>
                 <b>-</b>
                 <!--stap 4 bevestiging-->
                 <a href="bevestiging.php"  class="actief">Stap 4</a><br><br>
@@ -81,15 +81,58 @@ if (isset($_POST['Vorige2'])) {
             $message="<p>Uw verzoek wordt bij ons verwerkt en wordt zo snel mogelijk bij u opgehaald </p>";
             mail($to, $subject, $message);
             }
+            $_SESSION['BetaalMethode'] = $_POST['BetaalMethode'];
+            if($_SESSION['BetaalMethode'] == "Factuur"){
+                $betalingskosten = 2;
+            }else{
+                $betalingskosten = 0;
+            }
+            if($_SESSION['Verpakken'] == 'on'){
+                    $verpakkingskosten =  6;
+                }else{
+                    $verpakkingskosten = 0;
+                }
+                if($_SESSION['Verpakken'] == 'on'){
+                    $verpakkingskosten =  6;
+                }else{
+                    $verpakkingskosten = 0;
+                }
+                $koerierskosten = 10;
+                $totaalBedragEx = $koerierskosten + $verpakkingskosten + $betalingskosten;
+                $btwKosten = ($totaalBedragEx * 1.21) - $totaalBedragEx;
+                $totaalBedrag = $btwKosten + $totaalBedragEx;
+                
             ?>
-            
-            <div>
-                <p>
-                    Bedankt voor het aanmelden van u pakket! Uw betaling is ontvangen en uw aanmelding wordt verwerkt.
-                </p>
+            <div class="col-sm-8 m-l20">
+                <h4> Factuur </h4><br>
+                <table class="betalenTabel">
+                    <tr class="tabelBorder"><th>Omschrijving</th><th></th><th>Bedrag</th></tr>
+                    <tr class="tabelBorder"><td>Koerierskosten</td><td></td><td>€<?php print($koerierskosten); ?></td></tr>
+                    <tr class="tabelBorder"><td>Verpakkingskosten</td><td></td><td>€<?php print($verpakkingskosten); ?></td></tr>
+                    <tr class="tabelBorderBold"><td>Factuurkosten</td><td></td><td>€<?php print($betalingskosten); ?></td></tr>
+                    <tr><td></td><td class="tabelBorder">Totaal bedrag ex. BTW</td><td class="tabelBorder">€<?php print($totaalBedragEx);?></td></tr>
+                    <tr><td></td><td class="tabelBorder">BTW kosten</td><td class="tabelBorder">€<?php print($btwKosten);?></td></tr>
+                    <tr><td></td><td><b>Totaal bedrag incl. BTW</b></td><td>€<?php print($totaalBedrag);?></td></tr>
+                </table>
+                <br>
+                <?php if($_SESSION['BetaalMethode'] == "Ideal"){
+                    ?>
+                 <p>Als u Ideal als betalingsmethode heeft gekozen wordt u doorgestuurd naar Ideal, nadat u op 'Afronden' heeft geklikt. </p>
+                <?php
+                }
+                ?>
+               
+        </div>
+            <div class="col-md-12">
+                <form method="POST" action="onlineVersturen.php" class="form-horizontal">
+                    <input type="submit" name="Afronden" value="Afronden" class="btn btn-primary floatr">
+                    <input type="submit" name="Vorige3" value="Vorige" class="btn btn-default buttonL floatr">
+                </form>
             </div>
         </div>
-            <?php include 'footer.php';
+            <?php
+        session_unset();
+            include 'footer.php';
         ?>
     </body>
 </html>
