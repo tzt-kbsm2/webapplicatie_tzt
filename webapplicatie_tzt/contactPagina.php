@@ -14,44 +14,44 @@ and open the template in the editor.
         <title>Tzt WebApplicatie</title>
         <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false&language=nl"></script>
         <script type="text/javascript">
-            ///////////////////////////////////////////////////////////////////
-            // Powered By MapsEasy.com Maps Generator                        
-            // Please keep the author information as long as the maps in use.
-            // You can find the free service at: http://www.MapsEasy.com     
-            ///////////////////////////////////////////////////////////////////
-            function LoadGmaps() {
-                var myLatlng = new google.maps.LatLng(52.5000746, 6.0808761);
-                var myOptions = {
-                    zoom: 16,
-                    center: myLatlng,
-                    disableDefaultUI: true,
-                    panControl: true,
-                    zoomControl: true,
-                    zoomControlOptions: {
-                        style: google.maps.ZoomControlStyle.DEFAULT
-                    },
-                    mapTypeControl: true,
-                    mapTypeControlOptions: {
-                        style: google.maps.MapTypeControlStyle.HORIZONTAL_BAR
-                    },
-                    streetViewControl: true,
-                    mapTypeId: google.maps.MapTypeId.ROADMAP
-                }
-                var map = new google.maps.Map(document.getElementById("MyGmaps"), myOptions);
-                var marker = new google.maps.Marker({
-                    position: myLatlng,
-                    map: map,
-                    title: "campus 2D 8017 CA Zwolle"
-                });
-            }
+	    ///////////////////////////////////////////////////////////////////
+	    // Powered By MapsEasy.com Maps Generator
+	    // Please keep the author information as long as the maps in use.
+	    // You can find the free service at: http://www.MapsEasy.com
+	    ///////////////////////////////////////////////////////////////////
+	    function LoadGmaps() {
+		var myLatlng = new google.maps.LatLng(52.5000746, 6.0808761);
+		var myOptions = {
+		    zoom: 16,
+		    center: myLatlng,
+		    disableDefaultUI: true,
+		    panControl: true,
+		    zoomControl: true,
+		    zoomControlOptions: {
+			style: google.maps.ZoomControlStyle.DEFAULT
+		    },
+		    mapTypeControl: true,
+		    mapTypeControlOptions: {
+			style: google.maps.MapTypeControlStyle.HORIZONTAL_BAR
+		    },
+		    streetViewControl: true,
+		    mapTypeId: google.maps.MapTypeId.ROADMAP
+		}
+		var map = new google.maps.Map(document.getElementById("MyGmaps"), myOptions);
+		var marker = new google.maps.Marker({
+		    position: myLatlng,
+		    map: map,
+		    title: "campus 2D 8017 CA Zwolle"
+		});
+	    }
 
 
         </script>
-                <script type='text/javascript'>
-            function refreshCaptcha() {
-                var img = document.images['captchaimg'];
-                img.src = img.src.substring(0, img.src.lastIndexOf("?")) + "?rand=" + Math.random() * 1000;
-            }
+	<script type='text/javascript'>
+	    function refreshCaptcha() {
+		var img = document.images['captchaimg'];
+		img.src = img.src.substring(0, img.src.lastIndexOf("?")) + "?rand=" + Math.random() * 1000;
+	    }
         </script>
     </head>
     <body onload="LoadGmaps()" onunload="GUnload()">
@@ -103,222 +103,222 @@ and open the template in the editor.
         </header>
 
 
-        <?php
-        if (isset($_POST['verzenden'])) {
-            session_start();
-            // Wanneer op verzenden wordt gedrukt, wordt de captcha gecontrolleerd.
-            if (empty($_SESSION['captcha_code']) || strcasecmp($_SESSION['captcha_code'], $_POST['captcha_code']) != 0) {
-                $verstuurd = FALSE;
-                ?>               <div class="container">
-                    <div class='row ' style=" margin-top: 3%;border-radius: 5px;" >
-                        <div class="col-lg-12 col-sm-12 kopcontact">
-                            <h3>
-                                Onze locatie
-                            </h3>
-                        </div>
+	<?php
+	if (isset($_POST['verzenden'])) {
+	    session_start();
+	    // Wanneer op verzenden wordt gedrukt, wordt de captcha gecontrolleerd.
+	    if (empty($_SESSION['captcha_code']) || strcasecmp($_SESSION['captcha_code'], $_POST['captcha_code']) != 0) {
+		$verstuurd = FALSE;
+		?>               <div class="container">
+		    <div class='row ' style=" margin-top: 3%;border-radius: 5px;" >
+			<div class="col-lg-12 col-sm-12 kopcontact">
+			    <h1>
+				Onze locatie
+			    </h1>
+			</div>
 
-                        <!-- Maps DIV : you can move the code below to where you want the maps to be displayed -->
-                        <div class="col-lg-12 col-sm-12" id="MyGmaps" style="width:98%;height:400px; margin:1%;"></div>
-                        <!-- End of Maps DIV -->
-                    </div>
-                </div>
-                <div class="container">
-                    <div class="row">
-                        <div class="contact overOns col-lg-4 col-sm-4">
-                            <div>
-                                <h3> 
-                                    Over ons</h3> 
-                                <hr>
-                            </div>
-                            <p>
-                                Schoolstraat 10<br>
-                                1700 AB Zwolle <br>
-                                <br>
-                                Telefoon: <a href="tel:0331223567" >033 12 34 567 </a><br>
-                                E-mail: <a href="mailto:info@tzt.nl">info@tzt.nl</a>
-                            </p>
-                        </div>
+			<!-- Maps DIV : you can move the code below to where you want the maps to be displayed -->
+			<div class="col-lg-12 col-sm-12" id="MyGmaps" style="width:98%;height:400px; margin:1%;"></div>
+			<!-- End of Maps DIV -->
+		    </div>
+		</div>
+		<div class="container">
+		    <div class="row">
+			<div class="contact overOns col-lg-4 col-sm-4">
+			    <div>
+				<h1>
+				    Over ons</h1>
+				<hr>
+			    </div>
+			    <p>
+				Schoolstraat 10<br>
+				1700 AB Zwolle <br>
+				<br>
+				Telefoon: <a href="tel:0331223567" >033 12 34 567 </a><br>
+				E-mail: <a href="mailto:info@tzt.nl">info@tzt.nl</a>
+			    </p>
+			</div>
 
-                        <div class="contact col-md-7">
-                            <div>
-                                <h3>
-                                    Contact formulier 
-                                </h3>
-                                <hr>
-                            </div>
+			<div class="contact col-md-7">
+			    <div>
+				<h3>
+				    Contact formulier
+				</h3>
+				<hr>
+			    </div>
 
-                            <span>Helaas, de ingevoerde code is onjuist! Klik <a href="contactPagina.php">hier</a> om terug te gaan naar het klachtenformulier.</span> 
-                        </div><?php
-                    } else {// Captcha is correct ingevuld, het formulier wordt nu verzonden.
-                        if (isset($_POST['verzenden'])) {
-                            $ToEmail = 'eric.h@live.nl'; // Naar welke e-mail moet het idee gestuurd worden?
-                            $EmailSubject = 'Klachtenformulier TZT Post'; // Onderwerp de e-mail
-                            $mailheader = "From: " . 'klachten@tztpost.nl' . "\r\n"; // Omdat het ook anoniem moet kunnen, standaard afzender ingesteld.
-                            $mailheader .= "Reply-To: " . 'klachten@tztpost.nl' . "\r\n";
-                            $mailheader .= "Content-type: text/html; charset=iso-8859-1\r\n";
-                            // Nu komt wat er in het bericht komt te staan. Bij anonieme ingave zijn alleen het onderwerp en idee ingevuld.
-                            $MESSAGE_BODY = "Naam: " . $_POST['naam'] . "<BR>";
-                            $MESSAGE_BODY .= " Email: " . $_POST["email"] . "<BR>";
-                            $MESSAGE_BODY .= " Onderwerp: " . $_POST["onderwerp"] . "<BR>";
-                            $MESSAGE_BODY .= " Opmerking: " . nl2br($_POST["bericht"]) . "<BR>";
-                            // Mail verzenden
-                            mail($ToEmail, $EmailSubject, $MESSAGE_BODY, $mailheader) or die("<p> Er ging iets mis bij het verzenden.</p>");
-                            $verstuurd = TRUE;
-                        }
-                        ?>
+			    <span>Helaas, de ingevoerde code is onjuist! Klik <a href="contactPagina.php">hier</a> om terug te gaan naar het klachtenformulier.</span>
+			</div><?php
+		    } else {// Captcha is correct ingevuld, het formulier wordt nu verzonden.
+			if (isset($_POST['verzenden'])) {
+			    $ToEmail = 'eric.h@live.nl'; // Naar welke e-mail moet het idee gestuurd worden?
+			    $EmailSubject = 'Klachtenformulier TZT Post'; // Onderwerp de e-mail
+			    $mailheader = "From: " . 'klachten@tztpost.nl' . "\r\n"; // Omdat het ook anoniem moet kunnen, standaard afzender ingesteld.
+			    $mailheader .= "Reply-To: " . 'klachten@tztpost.nl' . "\r\n";
+			    $mailheader .= "Content-type: text/html; charset=iso-8859-1\r\n";
+			    // Nu komt wat er in het bericht komt te staan. Bij anonieme ingave zijn alleen het onderwerp en idee ingevuld.
+			    $MESSAGE_BODY = "Naam: " . $_POST['naam'] . "<BR>";
+			    $MESSAGE_BODY .= " Email: " . $_POST["email"] . "<BR>";
+			    $MESSAGE_BODY .= " Onderwerp: " . $_POST["onderwerp"] . "<BR>";
+			    $MESSAGE_BODY .= " Opmerking: " . nl2br($_POST["bericht"]) . "<BR>";
+			    // Mail verzenden
+			    mail($ToEmail, $EmailSubject, $MESSAGE_BODY, $mailheader) or die("<p> Er ging iets mis bij het verzenden.</p>");
+			    $verstuurd = TRUE;
+			}
+			?>
 
-                        <div class="succes col-sm-12">
-                            <h3>Uw bericht is verzonden</h3>
-                        </div>
-                        <?php
-                    }
-                } else {
-                    ?>
-                    <div class="container">
-                        <div class='row ' style=" margin-top: 3%;border-radius: 5px;" >
-                            <div class="col-lg-12 col-sm-12 kopcontact">
-                                <h3>
-                                    Onze locatie
-                                </h3>
-                            </div>
+			<div class="succes col-sm-12">
+			    <h1>Uw bericht is verzonden</h1>
+			</div>
+			<?php
+		    }
+		} else {
+		    ?>
+    		<div class="container">
+    		    <div class='row ' style=" margin-top: 3%;border-radius: 5px;" >
+    			<div class="col-lg-12 col-sm-12 kopcontact">
+    			    <h1>
+    				Onze locatie
+    			    </h1>
+    			</div>
 
-                            <!-- Maps DIV : you can move the code below to where you want the maps to be displayed -->
-                            <div class="col-lg-12 col-sm-12" id="MyGmaps" style="width:98%;height:400px; margin:1%;"></div>
-                            <!-- End of Maps DIV -->
-                        </div>
-                    </div>
-                    <div class="container">
-                        <div class="row">
-                            <div class="contact overOns col-lg-4 col-sm-4">
-                                <div>
-                                    <h3> 
-                                        Over ons</h3> 
-                                    <hr>
-                                </div>
-                                <p>
-                                    Schoolstraat 10<br>
-                                    1700 AB Zwolle <br>
-                                    <br>
-                                    Telefoon: <a href="tel:0331223567" >033 12 34 567 </a><br>
-                                    E-mail: <a href="mailto:info@tzt.nl">info@tzt.nl</a>
-                                </p>
-                            </div>
+    			<!-- Maps DIV : you can move the code below to where you want the maps to be displayed -->
+    			<div class="col-lg-12 col-sm-12" id="MyGmaps" style="width:98%;height:400px; margin:1%;"></div>
+    			<!-- End of Maps DIV -->
+    		    </div>
+    		</div>
+    		<div class="container">
+    		    <div class="row">
+    			<div class="contact overOns col-lg-4 col-sm-4">
+    			    <div>
+    				<h3>
+    				    Over ons</h3>
+    				<hr>
+    			    </div>
+    			    <p>
+    				Schoolstraat 10<br>
+    				1700 AB Zwolle <br>
+    				<br>
+    				Telefoon: <a href="tel:0331223567" >033 12 34 567 </a><br>
+    				E-mail: <a href="mailto:info@tzt.nl">info@tzt.nl</a>
+    			    </p>
+    			</div>
 
-                            <div class="contact col-md-7">
-                                <div>
-                                    <h3>
-                                        Contact formulier 
-                                    </h3>
-                                    <hr>
-                                </div>
-                                    <form class="form-horizontal" method="POST" action="contactPagina.php">
-                                        <div class="form-group">
-                                            <label class="col-sm-2 control-label">Naam</label>
-                                            <div class="col-sm-10">
-                                                <input type="text" class="form-control" name="naam" placeholder="Naam">
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="col-sm-2 control-label">Email*</label>
-                                            <div class="col-sm-10">
-                                                <input type="email" class="form-control" name="email" placeholder="Email" required>
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="col-sm-2 control-label">Onderwerp*</label>
-                                            <div class="col-sm-10">
-                                                <input type="text" class="form-control" name="onderwerp" placeholder="Onderwerp" required>
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="col-sm-2 control-label">Bericht*</label>
-                                            <div class="col-sm-10">
-                                                <textarea class="form-control" rows="6" name="bericht" required></textarea>
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="col-sm-2 control-label"></label>
-                                            <div class="col-sm-10">
-                                                <img src="klacht/captcha.php?rand=<?php echo rand(); ?>" id='captchaimg'>
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="col-sm-2 control-label">Code*</label>
-
-
-                                            <div class="col-sm-10">
-                                                <input id="captcha_code" name="captcha_code" type="text" class="form-control" required>
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="col-sm-2 control-label"></label>
-                                            <div class="col-sm-10">
-                                                Kunt u de afbeelding niet lezen? Klik <a href='javascript: refreshCaptcha();'>hier</a> om te vernieuwen.<br>
-                                                <i>Velden met een * zijn verplicht.</i>
-                                            </div>
-                                        </div>
-                                        <div class="formulierC">
-                                                <button type="reset" class="btn btn-default" name="annuleren">Annuleren</button>
-                                                <button type="submit" class="btn btn-primary" name="verzenden" onclick="return validate();">Verzenden</button>
-                                        </div>  
-                                        
-                                    </form>
-                                </div>
-                                <?php
-                            }
-                            ?>
+    			<div class="contact col-md-7">
+    			    <div>
+    				<h3>
+    				    Contact formulier
+    				</h3>
+    				<hr>
+    			    </div>
+    			    <form class="form-horizontal" method="POST" action="contactPagina.php">
+    				<div class="form-group">
+    				    <label class="col-sm-2 control-label">Naam</label>
+    				    <div class="col-sm-10">
+    					<input type="text" class="form-control" name="naam" placeholder="Naam">
+    				    </div>
+    				</div>
+    				<div class="form-group">
+    				    <label class="col-sm-2 control-label">Email*</label>
+    				    <div class="col-sm-10">
+    					<input type="email" class="form-control" name="email" placeholder="Email" required>
+    				    </div>
+    				</div>
+    				<div class="form-group">
+    				    <label class="col-sm-2 control-label">Onderwerp*</label>
+    				    <div class="col-sm-10">
+    					<input type="text" class="form-control" name="onderwerp" placeholder="Onderwerp" required>
+    				    </div>
+    				</div>
+    				<div class="form-group">
+    				    <label class="col-sm-2 control-label">Bericht*</label>
+    				    <div class="col-sm-10">
+    					<textarea class="form-control" rows="6" name="bericht" required></textarea>
+    				    </div>
+    				</div>
+    				<div class="form-group">
+    				    <label class="col-sm-2 control-label"></label>
+    				    <div class="col-sm-10">
+    					<img src="klacht/captcha.php?rand=<?php echo rand(); ?>" id='captchaimg'>
+    				    </div>
+    				</div>
+    				<div class="form-group">
+    				    <label class="col-sm-2 control-label">Code*</label>
 
 
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <footer>
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-3">
-                            <h3>Contact</h3>
-                            <table>
-                                <tr><td><strong>TZT B.V.</strong></td></tr>
-                                <tr><td>Schoolstraat 10</td></tr>
-                                <tr><td>1700 AB</td></tr>
-                                <tr><td>Zwolle</td></tr>
-                                <tr><td><a class="footerlink" href="mailto:info@tzt.nl&subject=Ik%20heb%20een%20vraag" target="_top">Info@tzt.nl</a></td></tr>
-                                <tr><td>033 12 34 567</td></tr>
-                            </table>
-                        </div>
-                        <div class="col-md-3">
-                            <h3>Bedrijf</h3>
-                            <table>
-                                <tr><td><a class="footerlink" href="#">Over TNT</a></td></tr>
-                                <tr><td><a class="footerlink" href="#">TNT Corporate Website</a></td></tr>
-                                <tr><td><a class="footerlink" href="#">Vacatures</a></td></tr>
-                                <tr><td><a class="footerlink" href="#">Help</a></td></tr>
-                                <tr><td><a class="footerlink" href="#">Pers</a></td></tr>
-                                <tr><td><a class="footerlink" href="#">Algemene Voorwaarden</a></td></tr>
-                                <tr><td><a class="footerlink" href="#">Privacybeleid</a></td></tr>
-                            </table>
-                        </div>
-                        <div class="col-md-3">
-                            <h3>Diensten</h3>
-                            <table>
-                                <tr><td><a class="footerlink" href="#">Groen bezorgen</a></td></tr>
-                                <tr><td><a class="footerlink" href="#">Tijd- en daggegarandeerd</a></td></tr>
-                                <tr><td><a class="footerlink" href="#">Vracht</a></td></tr>
-                                <tr><td><a class="footerlink" href="#">Special Services</a></td></tr>
-                            </table>
-                        </div>
-                        <div class="col-md-3">
-                            <h3>Vind ons ook op:</h3>
-                            <table>
-                                <tr><td><a class="footerlink" href="http://www.facebook.nl" target="blank">Facebook</a></td></tr>
-                                <tr><td><a class="footerlink" href="http://www.twitter.com" target="blank">Twitter</a></td></tr>
-                                <tr><td><a class="footerlink" href="http://www.youtube.nl" target="blank">Youtube</a></td></tr>
-                                <tr><td><a class="footerlink" href="http://www.instagram.com" target="blank">Instagram</a></td></tr>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-            </footer>
+    				    <div class="col-sm-10">
+    					<input id="captcha_code" name="captcha_code" type="text" class="form-control" required>
+    				    </div>
+    				</div>
+    				<div class="form-group">
+    				    <label class="col-sm-2 control-label"></label>
+    				    <div class="col-sm-10">
+    					Kunt u de afbeelding niet lezen? Klik <a href='javascript: refreshCaptcha();'>hier</a> om te vernieuwen.<br>
+    					<i>Velden met een * zijn verplicht.</i>
+    				    </div>
+    				</div>
+    				<div class="formulierC">
+    				    <button type="reset" class="btn btn-default" name="annuleren">Annuleren</button>
+    				    <button type="submit" class="btn btn-primary" name="verzenden" onclick="return validate();">Verzenden</button>
+    				</div>
+
+    			    </form>
+    			</div>
+			    <?php
+			}
+			?>
+
+
+		    </div>
+		</div>
+	    </div>
+	</div>
+	<footer>
+	    <div class="container">
+		<div class="row">
+		    <div class="col-md-3">
+			<h3>Contact</h3>
+			<table>
+			    <tr><td><strong>TZT B.V.</strong></td></tr>
+			    <tr><td>Schoolstraat 10</td></tr>
+			    <tr><td>1700 AB</td></tr>
+			    <tr><td>Zwolle</td></tr>
+			    <tr><td><a class="footerlink" href="mailto:info@tzt.nl&subject=Ik%20heb%20een%20vraag" target="_top">Info@tzt.nl</a></td></tr>
+			    <tr><td>033 12 34 567</td></tr>
+			</table>
+		    </div>
+		    <div class="col-md-3">
+			<h3>Bedrijf</h3>
+			<table>
+			    <tr><td><a class="footerlink" href="#">Over TNT</a></td></tr>
+			    <tr><td><a class="footerlink" href="#">TNT Corporate Website</a></td></tr>
+			    <tr><td><a class="footerlink" href="#">Vacatures</a></td></tr>
+			    <tr><td><a class="footerlink" href="#">Help</a></td></tr>
+			    <tr><td><a class="footerlink" href="#">Pers</a></td></tr>
+			    <tr><td><a class="footerlink" href="#">Algemene Voorwaarden</a></td></tr>
+			    <tr><td><a class="footerlink" href="#">Privacybeleid</a></td></tr>
+			</table>
+		    </div>
+		    <div class="col-md-3">
+			<h3>Diensten</h3>
+			<table>
+			    <tr><td><a class="footerlink" href="#">Groen bezorgen</a></td></tr>
+			    <tr><td><a class="footerlink" href="#">Tijd- en daggegarandeerd</a></td></tr>
+			    <tr><td><a class="footerlink" href="#">Vracht</a></td></tr>
+			    <tr><td><a class="footerlink" href="#">Special Services</a></td></tr>
+			</table>
+		    </div>
+		    <div class="col-md-3">
+			<h3>Vind ons ook op:</h3>
+			<table>
+			    <tr><td><a class="footerlink" href="http://www.facebook.nl" target="blank">Facebook</a></td></tr>
+			    <tr><td><a class="footerlink" href="http://www.twitter.com" target="blank">Twitter</a></td></tr>
+			    <tr><td><a class="footerlink" href="http://www.youtube.nl" target="blank">Youtube</a></td></tr>
+			    <tr><td><a class="footerlink" href="http://www.instagram.com" target="blank">Instagram</a></td></tr>
+			</table>
+		    </div>
+		</div>
+	    </div>
+	</footer>
     </body>
 </html>
