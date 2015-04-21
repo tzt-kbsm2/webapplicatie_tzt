@@ -76,6 +76,9 @@ if (isset($_POST['Annuleren'])) {
 
             </div>
             <?php
+            
+            include 'database.php';
+            
             $_SESSION['BedrijfV'] = $_POST['BedrijfV'];
                 $_SESSION['BedrijfO'] = $_POST['BedrijfO'];
                 $_SESSION['FirstnameV'] = $_POST['FirstnameV'];
@@ -107,8 +110,8 @@ if (isset($_POST['Annuleren'])) {
                 $plaatsontvanger = $_POST['PlaatsO'];
                 $emailadreszender = $_POST['EmailV'];
                 $telefoonnummerzender = $_POST['TelefoonnumerV'];
-                $resultaatZender = mysqli_query($connect, "INSERT INTO SendCustomer VALUES ('" . $bedrijfszender . "','" . $voornaamzender . "','" . $achternaamzender . "','" . $adreszender . "','" . $postcodezender . "','" . $plaatszender . "','" . $emailadreszender . "','" . $telefoonnummerzender . "'");
-                $resultaatOntvanger = mysqli_query($connect, "INSERT INTO ReceiveCustomer VALUES ('" . $bedrijfsontvanger . "','" . $voornaamontvanger . "','" . $achternaamontvanger . "','" . $adresontvanger . "','" . $adresontvanger . "','" . $postcodeontvanger . "','" . $plaatsontvanger . "'");
+                $resultaatZender = mysqli_query($database, "INSERT INTO SendCustomer VALUES ('" . $bedrijfszender . "','" . $voornaamzender . "','" . $achternaamzender . "','" . $adreszender . "','" . $postcodezender . "','" . $plaatszender . "','" . $emailadreszender . "','" . $telefoonnummerzender . "'");
+                $resultaatOntvanger = mysqli_query($database, "INSERT INTO ReceiveCustomer VALUES ('" . $bedrijfsontvanger . "','" . $voornaamontvanger . "','" . $achternaamontvanger . "','" . $adresontvanger . "','" . $adresontvanger . "','" . $postcodeontvanger . "','" . $plaatsontvanger . "'");
 
 //                if (!$result) {
 //                    echo "FOUT: " . mysqli_error($link);
