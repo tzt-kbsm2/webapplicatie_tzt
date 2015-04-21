@@ -96,8 +96,8 @@ if (isset($_POST['Annuleren'])) {
                 
 
             if (isset($_POST['Volgende'])) {
-                $bedrijfszender = $_POST['BedrijfV'];
-                $bedrijfsontvanger = $_POST['BedrijfO'];
+                $bedrijfzender = $_POST['BedrijfV'];
+                $bedrijfontvanger = $_POST['BedrijfO'];
                 $voornaamzender = $_POST['FirstnameV'];
                 $voornaamontvanger = $_POST['FirstnameO'];
                 $achternaamzender = $_POST['LastnameV'];
@@ -110,15 +110,15 @@ if (isset($_POST['Annuleren'])) {
                 $plaatsontvanger = $_POST['PlaatsO'];
                 $emailadreszender = $_POST['EmailV'];
                 $telefoonnummerzender = $_POST['TelefoonnumerV'];
-                $resultaatZender = mysqli_query($database, "INSERT INTO SendCustomer VALUES ('" . $bedrijfszender . "','" . $voornaamzender . "','" . $achternaamzender . "','" . $adreszender . "','" . $postcodezender . "','" . $plaatszender . "','" . $emailadreszender . "','" . $telefoonnummerzender . "'");
-                $resultaatOntvanger = mysqli_query($database, "INSERT INTO ReceiveCustomer VALUES ('" . $bedrijfsontvanger . "','" . $voornaamontvanger . "','" . $achternaamontvanger . "','" . $adresontvanger . "','" . $adresontvanger . "','" . $postcodeontvanger . "','" . $plaatsontvanger . "'");
+                $resultaatZender = mysqli_query($database, "INSERT INTO SendCustomer VALUES ('" . $bedrijfzender . "','" . $voornaamzender . "','" . $achternaamzender . "','" . $adreszender . "','" . $postcodezender . "','" . $plaatszender . "','" . $emailadreszender . "','" . $telefoonnummerzender . "'");
+                $resultaatOntvanger = mysqli_query($database, "INSERT INTO ReceiveCustomer VALUES ('" . $bedrijfontvanger . "','" . $voornaamontvanger . "','" . $achternaamontvanger . "','" . $adresontvanger . "','" . $adresontvanger . "','" . $postcodeontvanger . "','" . $plaatsontvanger . "'");
 
 //                if (!$result) {
 //                    echo "FOUT: " . mysqli_error($link);
 //                }
             }
-                             $bedrijfszender = $_SESSION['BedrijfV'];
-                $bedrijfsontvanger = $_SESSION['BedrijfO'];
+                             $bedrijfzender = $_SESSION['BedrijfV'];
+                $bedrijfontvanger = $_SESSION['BedrijfO'];
                 $voornaamzender = $_SESSION['FirstnameV'];
                 $voornaamontvanger = $_SESSION['FirstnameO'];
                 $achternaamzender = $_SESSION['LastnameV'];
