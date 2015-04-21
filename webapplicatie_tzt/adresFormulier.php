@@ -87,6 +87,7 @@ session_start();
 		$plaatsontvanger = "";
 		$emailadreszender = "";
 		$telefoonnummerzender = "";
+		$_SESSION['Verpakken'] = "";
 	    } else {
 		$bedrijfzender = $_SESSION['BedrijfV'];
 		$bedrijfontvanger = $_SESSION['BedrijfO'];
