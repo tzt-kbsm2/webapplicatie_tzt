@@ -1,4 +1,6 @@
-<?php session_start();?>
+<?php
+session_start();
+?>
 <html>
     <head>
         <meta charset="UTF-8">
@@ -57,7 +59,7 @@
         <div class="container">
             <div class="col-md-12 stappenbalk">
                 <!--stap 1  gegevens verzender / ontvanger-->
-                <a href="adresFormulier.php" class="actief">Stap 1</a> 
+                <a href="adresFormulier.php" class="actief">Stap 1</a>
                 <b>-</b>
                 <!--stap 2 pakket gegevens-->
                 <a href="pakketFormulier.php">Stap 2</a>
@@ -69,24 +71,39 @@
                 <a href="">Stap 4</a><br><br>
 
             </div>
-            <?php
-
-                $bedrijfzender = $_SESSION['BedrijfV'];
-                $bedrijfontvanger = $_SESSION['BedrijfO'];
-                $voornaamzender = $_SESSION['FirstnameV'];
-                $voornaamontvanger = $_SESSION['FirstnameO'];
-                $achternaamzender = $_SESSION['LastnameV'];
-                $achternaamontvanger = $_SESSION['LastnameO'];
-                $adreszender = $_SESSION['AdresV'];
-                $adresontvanger = $_SESSION['AdresO'];
-                $postcodezender = $_SESSION['PostcodeV'];
-                $postcodeontvanger = $_SESSION['PostcodeO'];
-                $plaatszender = $_SESSION['PlaatsV'];
-                $plaatsontvanger = $_SESSION['PlaatsO'];
-                $emailadreszender = $_SESSION['EmailV'];
-                $telefoonnummerzender = $_SESSION['TelefoonnumerV'];
-                session_unset();
-            ?>
+	    <?php
+	    if (!$_SESSION) {
+		$bedrijfzender = "";
+		$bedrijfontvanger = "";
+		$voornaamzender = "";
+		$voornaamontvanger = "";
+		$achternaamzender = "";
+		$achternaamontvanger = "";
+		$adreszender = "";
+		$adresontvanger = "";
+		$postcodezender = "";
+		$postcodeontvanger = "";
+		$plaatszender = "";
+		$plaatsontvanger = "";
+		$emailadreszender = "";
+		$telefoonnummerzender = "";
+	    } else {
+		$bedrijfzender = $_SESSION['BedrijfV'];
+		$bedrijfontvanger = $_SESSION['BedrijfO'];
+		$voornaamzender = $_SESSION['FirstnameV'];
+		$voornaamontvanger = $_SESSION['FirstnameO'];
+		$achternaamzender = $_SESSION['LastnameV'];
+		$achternaamontvanger = $_SESSION['LastnameO'];
+		$adreszender = $_SESSION['AdresV'];
+		$adresontvanger = $_SESSION['AdresO'];
+		$postcodezender = $_SESSION['PostcodeV'];
+		$postcodeontvanger = $_SESSION['PostcodeO'];
+		$plaatszender = $_SESSION['PlaatsV'];
+		$plaatsontvanger = $_SESSION['PlaatsO'];
+		$emailadreszender = $_SESSION['EmailV'];
+		$telefoonnummerzender = $_SESSION['TelefoonnumerV'];
+	    }
+	    ?>
             <h4>Om uw pakket aan te melden dient u de volgende gegevens in te vullen.</h4><br><br>
             <div class="row">
                 <form method='POST' action='pakketFormulier.php' class="form-horizontal">
@@ -185,13 +202,13 @@
                     </div>
                     <div class="container col-sm-12">
                         <input class="btn btn-primary floatr" type="submit" value="Volgende" name="Volgende">
-                        <input class="btn btn-default floatr buttonL" type="submit" value="Annuleren" name="Annuleren">
+                        <input class="btn btn-default floatr buttonL" type="reset" value="Annuleren" name="Annuleren">
                     </div>
                 </form>
             </div>
         </div>
 
-        <?php include 'footer.php';
-        ?>
+	<?php include 'footer.php';
+	?>
     </body>
 </html>

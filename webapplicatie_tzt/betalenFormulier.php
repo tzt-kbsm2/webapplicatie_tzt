@@ -1,7 +1,11 @@
-<?php session_start();
+<?php
+session_start();
 if (isset($_POST['Vorige'])) {
     header("location: adresFormulier.php");
     exit();
+}
+if (isset($_POST['Verpakken'])) {
+    $_SESSION['Verpakken'] = $_POST['Verpakken'];
 }
 ?>
 
@@ -63,7 +67,7 @@ if (isset($_POST['Vorige'])) {
         <div class="container">
             <div class="col-md-12 stappenbalk">
                 <!--stap 1  gegevens verzender / ontvanger-->
-                <a href="adresFormulier.php">Stap 1</a> 
+                <a href="adresFormulier.php">Stap 1</a>
                 <b>-</b>
                 <!--stap 2 pakket gegevens-->
                 <a href="pakketFormulier.php">Stap 2</a>
@@ -75,21 +79,19 @@ if (isset($_POST['Vorige'])) {
                 <a href="">Stap 4</a><br><br>
 
             </div>
-            <?php
-            if (isset($POST['Volgende1'])) {
-                $Weight = $_POST['Gewicht'];
-                $Size = $_POST['Grootte'];
-                $CreationDate = date("d-m-Y h:i:sa");
-                // include'database.php';
-                $result = mysqli_query($link, "INSERT INTO Package (CreationDate,Size,Weight) VALUES('$CreationDate','$Size','$Weight')");
+	    <?php
+	    if (isset($POST['Volgende1'])) {
+		$Weight = $_POST['Gewicht'];
+		$Size = $_POST['Grootte'];
+		$CreationDate = date("d-m-Y h:i:sa");
+		// include'database.php';
+		$result = mysqli_query($link, "INSERT INTO Package (CreationDate,Size,Weight) VALUES('$CreationDate','$Size','$Weight')");
 //if(!$result){
 //	echo "FOUT: ".mysqli_error($link);
 //}
-                
-            }
-            $_SESSION['Verpakken'] = $_POST['Verpakken'];
-            ?>
-           <div class="col-sm-6 m-l35">
+	    }
+	    ?>
+	    <div class="col-sm-6 m-l35">
                 <form class="form-horizontal" method="POST" action="bevestiging.php">
                     <h4>Hoe wilt u betalen?</h4>
                     <br>
@@ -100,16 +102,15 @@ if (isset($_POST['Vorige'])) {
                         </select>
                         <br>
                     </div>
-                    
+
                     <div class="col-md-12">
-                    <input class="btn btn-primary floatr" type="submit" value="Volgende" name="Volgende2">
-                    <input class="btn btn-default floatr buttonL" type="submit" value="Vorige" name="Vorige2">
+			<input class="btn btn-primary floatr" type="submit" value="Volgende" name="Volgende2">
+			<input class="btn btn-default floatr buttonL" type="submit" value="Vorige" name="Vorige2">
                     </div>
                 </form>
             </div>
         </div>
-        <?php include 'footer.php';
-
-        ?>
+	<?php include 'footer.php';
+	?>
     </body>
 </html>
