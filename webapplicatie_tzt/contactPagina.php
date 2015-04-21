@@ -64,7 +64,7 @@ and open the template in the editor.
                 <div id="menu">
                     <ul class="nav nav-pills">
                         <li role="presentation"><a href="index.php">Home</a></li>
-                        <li role="presentation"><a href="#">Over</a></li>
+                        <li role="presentation"><a href="overOns.php">Over</a></li>
                         <li role="presentation"><a href="onlineVersturen.php">Online versturen</a></li>
                         <li role="presentation" class="active"><a href="contactPagina.php">Contact</a></li>
                         <li>
