@@ -1,5 +1,5 @@
 
-<link href="../bootstrap.css" rel="stylesheet">
+<link href="../css/bootstrap.css" rel="stylesheet">
 <link href="style.css" rel="stylesheet">
 <script type='text/javascript'>
     function refreshCaptcha() {
@@ -90,4 +90,6 @@ if (isset($_POST['verzenden'])) {
         </form>
     </div>
     <?php
-}?>
+    include "../footer.php";
+}
+?>
