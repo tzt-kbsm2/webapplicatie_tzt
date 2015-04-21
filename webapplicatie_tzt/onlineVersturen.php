@@ -1,4 +1,10 @@
-<?php session_start(); ?>
+<?php
+session_start();
+if (isset($_POST['Vorige3'])) {
+    header("location: betalenFormulier.php");
+    exit();
+}
+?>
 <html>
     <head>
         <meta charset="UTF-8">
