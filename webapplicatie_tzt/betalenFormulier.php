@@ -4,8 +4,11 @@ if (isset($_POST['Vorige'])) {
     header("location: adresFormulier.php");
     exit();
 }
+
 if (isset($_POST['Verpakken'])) {
     $_SESSION['Verpakken'] = $_POST['Verpakken'];
+} else if (!isset($_POST['Verpakken']) && isset($_POST['from1'])) {
+    $_SESSION['Verpakken'] = "";
 }
 ?>
 

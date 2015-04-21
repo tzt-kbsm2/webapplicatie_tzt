@@ -145,6 +145,7 @@ session_start();
 		</table>
 	    </div>
             <form class="form-horizontal col-md-10 m-l20" method="POST" action="betalenFormulier.php">
+		<input type="hidden" name="from1" value="from1">
                 <h4>Selecteer hier de grootte en het gewicht van u pakket. </h4><br>
                 <div class="form-group">
                     <label class="col-sm-4 control-label"> Pakket grootte </label>
