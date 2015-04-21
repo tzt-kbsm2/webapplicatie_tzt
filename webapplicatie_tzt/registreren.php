@@ -54,7 +54,7 @@
             </div>
         </header>
         <?php
-        $database = mysqli_connect("localhost", "root", "usbw", "tztdb", 3307);
+        $database = mysqli_connect("localhost", "root", "usbw", "tztdb", 3306);
 
         include 'database.php';
         if (!isset($_POST["registreren"])) {
