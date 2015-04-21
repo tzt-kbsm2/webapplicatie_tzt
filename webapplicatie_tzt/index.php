@@ -80,14 +80,14 @@ and open the template in the editor.
                         </div>
 
                         <div class="item">
-                            <img src="image/slide2.jpg" alt="...">
+                            <img src="image/mensen.jpg" alt="...">
                             <div class="carousel-caption">
                                 <h2>Test bericht 2</h2>
                             </div>
                         </div>
 
                         <div class="item">
-                            <img src="image/slide3.jpg" alt="...">
+                            <img src="image/pakketten.jpg" alt="...">
                             <div class="carousel-caption">
                                 <h2>Test bericht 3</h2>
                             </div>
@@ -109,12 +109,12 @@ and open the template in the editor.
                                 <img src="image/TariefBerekenen.png" alt=""/>
                                 <form method='POST' action='#' class='form-horizontal'>
                                     <div class="form-group col-sm-10">
-                                    <input type='text' name='trackTrace' class="form-control">
+					<input type='text' name='trackTrace' class="form-control">
                                     </div>
                                     <div class="form-group">
-                                         <div class="col-sm-10">
-                                    <input type='submit' name='zoek' class='btn btn-primary floatr'>
-                                         </div>
+					<div class="col-sm-10">
+					    <input type='submit' name='zoek' class='btn btn-primary floatr'>
+					</div>
                                     </div>
                                 </form>
                             </div>
@@ -125,7 +125,7 @@ and open the template in the editor.
                             <div class="caption">
                                 <h3>Koerier worden</h3>
                                 <img src="image/KoerierWorden.png" alt=""/>
-                                <p>Lorem Ipsum is slechts een proeftekst uit het drukkerij- en zetterijwezen. 
+                                <p>Lorem Ipsum is slechts een proeftekst uit het drukkerij- en zetterijwezen.
                                     Lorem Ipsum is de standaard proeftekst in deze bedrijfstak sinds de 16e eeuw.</p>
                                 <a href="#" class="btn btn-primary btn-lg" role="button">Registreren</a>
                             </div>
@@ -136,7 +136,7 @@ and open the template in the editor.
                             <div class="caption">
                                 <h3>Verzenden voor 3 uur!</h3>
                                 <img src="image/VerzendenVoor3.png" alt=""/>
-                                <p>Lorem Ipsum is slechts een proeftekst uit het drukkerij- en zetterijwezen. 
+                                <p>Lorem Ipsum is slechts een proeftekst uit het drukkerij- en zetterijwezen.
                                     Lorem Ipsum is de standaard proeftekst in deze bedrijfstak sinds de 16e eeuw.</p>
                                 <a href="#" class="btn btn-primary btn-lg" role="button">Lees meer</a>
                             </div>
@@ -145,8 +145,8 @@ and open the template in the editor.
                 </div>
             </div>
         </div>
-        <?php
-        include 'footer.php';
-        ?>
+	<?php
+	include 'footer.php';
+	?>
     </body>
 </html>
