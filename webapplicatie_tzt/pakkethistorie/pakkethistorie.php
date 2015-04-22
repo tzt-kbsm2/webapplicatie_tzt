@@ -2,22 +2,22 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-        <link href="css/bootstrap.css" rel="stylesheet" type="text/css"/>
+        <link href="../css/bootstrap.css" rel="stylesheet" type="text/css"/>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-        <script src="js/bootstrap.js" type="text/javascript"></script>
+        <script src="../js/bootstrap.js" type="text/javascript"></script>
         <title>Tzt WebApplicatie</title>
     </head>
     <body>
         <header>
             <div class="container">
                 <div class="logo">
-                    <img src="image/logoTzt.jpg" alt="" width="" height="80"/>
+                    <img src="../image/logoTzt.jpg" alt="" width="" height="80"/>
                 </div>
                 <div id="menu">
                     <ul class="nav nav-pills">
                         <li role="presentation" ><a href="index.php">Home</a></li>
                         <li role="presentation"><a href="#">Over</a></li>
-                        <li role="presentation" class="active"><a href="onlineVersturen.php">Online versturen</a></li>
+                        <li role="presentation"><a href="onlineVersturen.php">Online versturen</a></li>
                         <li role="presentation"><a href="contactPagina.php">Contact</a></li>
                         <li>
                             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#loginModal" data-whatever="Inloggen">Login</button>
@@ -54,61 +54,49 @@
             </div>
         </header>
         <div class="container">
+            <table>
             <?php
-                echo "<table>";
                 
                 include "../database.php";
                 
                 //$username = $_SESSION['Email'];
                 //$password = $_SESSION['Password'];
-                $username = 'janjager@windesheim.nl';
-
-                $loginid = mysqli_prepare($database, "SELECT CustomerID FROM SendCustomer WHERE Email='$username'");
-                mysqli_stmt_execute($loginid);
-                mysqli_stmt_bind_result($loginid, $customerid);
-                mysqli_stmt_fetch($loginid);
+                $username = 'pieter@live.nl';
                 
-                $stmt1 = mysqli_prepare($database, "SELECT PackageID, SendDate, DeliverDate, StartLocation, EndLocation, CoerierType FROM Package P JOIN SendCustomer S ON P.PackageID = S.CustomerID WHERE S.CustomerID = $customerid");
-                mysqli_stmt_execute($stmt1);
-                mysqli_stmt_bind_result($stmt1, $package, $senddate, $deliverdate, $startlocation, $endlocation, $coeriertype);
-                while(mysqli_stmt_fetch($stmt1))
-                {
-                    echo '<tr><td>'.$package.'</td>';
-                    echo '<td>'.$senddate.'</td>';
-                    echo '<td>'.$deliverdate.'</td>';
-                    echo '<td>'.$startlocation.'</td>';
-                    echo '<td>'.$endlocation.'</td>';
-                    echo '<td>'.$coeriertype.'</td></tr>';
-                }
-                echo"</table>";
+                $userid = mysqli_prepare($database, "SELECT Username, SendCustomerID, BodeID FROM Login WHERE Username='$username'");
+                mysqli_stmt_execute($userid);
+                mysqli_stmt_bind_result($userid, $name, $user, $bodeid);
+                mysqli_stmt_fetch($userid);
+                print ("<p>".$name." + ".$user." + ".$bodeid."</p>");
                 
-                mysqli_close($database);
+//                $loginid = mysqli_prepare($database, "SELECT SendCustomerID, BodeID FROM Login WHERE Username='$username'");
+//                mysqli_stmt_execute($loginid);
+//                mysqli_stmt_bind_result($loginid, $sendcustomerid, $bodeid);
+//                mysqli_stmt_fetch($loginid);
+//                print ($sendcustomerid."+".$bodeid);
                 
-?>
+//                $stmt1 = mysqli_prepare($database, "SELECT PackageID, Signing, StatusID, CoerierType, SendCustomerID FROM Package WHERE SendCustomerID = '$sendcustomerid' AND StatusID = 3");
+//                mysqli_stmt_execute($stmt1);
+//                mysqli_stmt_bind_result($stmt1, $packageid, $signing, $statusid, $coeriertype, $customerid);
+//                while(mysqli_stmt_fetch($stmt1))
+//                {
+//                    echo '<tr><td>'.$packageid.'</td>';
+//                    echo '<td>'.$signing.'</td>';
+//                    echo '<td>'.$statusid.'</td>';
+//                    echo '<td>'.$coeriertype.'</td>';
+//                    echo '<td>'.$customerid.'</td></tr>';
+//                }
+//                $loginid = ("SELECT SendCustomerID, BodeID FROM Login WHERE Username='$username'");
+//                $control = mysqli_query($database, $loginid);
+//                mysqli_fetch_assoc($control);
+                
+                mysqli_close($database);               
+            ?>
+            </table>
         </div>
-                <div class="col-sm-12 OV">
-                    <div class="col-sm-6 OVlinks">
-                        <h4>Inloggen</h4>
-                        <form method="POST" class="form-horizontal" action="#">
-                            <div class="form-group">
-                                <label for="email" class="control-label col-sm-3">E-mail adres</label>
-                                <div class="col-sm-9">
-                                    <input type="email" class="form-control" name="email">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="ww" class="control-label col-sm-3">Wachtwoord</label>
-                                <div class="col-sm-9">
-                                    <input type="password" class="form-control" name="ww">
-                                </div>
-                            </div>
-                            <button type="submit" class="btn btn-primary floatr" name="inloggen">Inloggen</button>
-                        </form>
-                    </div>
-                    
-            
-        </div>
- 
+            <?php
+                include '../footer.php';
+            ?>
     </body>
 </html>
 
