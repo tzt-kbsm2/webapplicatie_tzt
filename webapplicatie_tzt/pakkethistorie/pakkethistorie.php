@@ -71,9 +71,9 @@
                 
                 //$username = $_SESSION['Email'];
                 //$password = $_SESSION['Password'];
-                $username = 'pieter@live.nl';
+                $username = 'melissa@bol.com';
                 
-                $userid = mysqli_prepare($database, "SELECT Username, SendCustomerID, BodeID FROM Login WHERE Username='$username'");
+                $userid = mysqli_prepare($database, "SELECT Username, SendCustomerID, CoerierID FROM Register WHERE Username='$username'");
                 mysqli_stmt_execute($userid);
                 mysqli_stmt_bind_result($userid, $name, $senduserid, $bodeid);
                 mysqli_stmt_fetch($userid);
@@ -81,10 +81,10 @@
                 mysqli_close($database);
                 
                 include "../database.php";
-                $result = mysqli_query($database, "SELECT Title, Length, Height, Width, Weight, StatusType , CreationDate, SendDate, DeliverDate FROM Package P JOIN Status S ON P.PackageID = S.PackageID WHERE SendCustomerID = $senduserid AND StatusType = 3");
+                $result = mysqli_query($database, "SELECT CompanyName, Length, Height, Width, Weight, StatusType , CreationDate, SendDate, DeliverDate FROM Package P JOIN Status S ON P.PackageID = S.PackageID WHERE SendCustomerID = 1 AND StatusType = 3");
                 $row = mysqli_fetch_assoc($result);
                 while($row){
-                        print("<tr><td>".$row["Title"]."</td>");
+                        print("<tr><td>".$row["CompanyName"]."</td>");
                         
                         if($row["StatusType"]==0){
                             print("<td>Pakket is geregistreed</td>");
