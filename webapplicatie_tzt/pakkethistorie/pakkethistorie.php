@@ -54,7 +54,17 @@
             </div>
         </header>
         <div class="container">
-            <table>
+            <h1>Pakkethistorie</h1>
+            <table class="table">
+                <th>Pakkettitel</th>
+                <th>Status</th>
+                <th>Lengte</th>
+                <th>Hoogte</th>
+                <th>Breedte</th>
+                <th>Gewicht</th>
+                <th>Geregistreerd</th>
+                <th>Verzonden</th>
+                <th>Afgeleverd</th>
             <?php
                 
                 include "../database.php";
@@ -65,30 +75,36 @@
                 
                 $userid = mysqli_prepare($database, "SELECT Username, SendCustomerID, BodeID FROM Login WHERE Username='$username'");
                 mysqli_stmt_execute($userid);
-                mysqli_stmt_bind_result($userid, $name, $user, $bodeid);
+                mysqli_stmt_bind_result($userid, $name, $senduserid, $bodeid);
                 mysqli_stmt_fetch($userid);
-                print ("<p>".$name." + ".$user." + ".$bodeid."</p>");
+                print ("<p>".$name."<br>"."SendCustomerID: ".$senduserid."</p>");
+                mysqli_close($database);
                 
-//                $loginid = mysqli_prepare($database, "SELECT SendCustomerID, BodeID FROM Login WHERE Username='$username'");
-//                mysqli_stmt_execute($loginid);
-//                mysqli_stmt_bind_result($loginid, $sendcustomerid, $bodeid);
-//                mysqli_stmt_fetch($loginid);
-//                print ($sendcustomerid."+".$bodeid);
-                
-//                $stmt1 = mysqli_prepare($database, "SELECT PackageID, Signing, StatusID, CoerierType, SendCustomerID FROM Package WHERE SendCustomerID = '$sendcustomerid' AND StatusID = 3");
-//                mysqli_stmt_execute($stmt1);
-//                mysqli_stmt_bind_result($stmt1, $packageid, $signing, $statusid, $coeriertype, $customerid);
-//                while(mysqli_stmt_fetch($stmt1))
-//                {
-//                    echo '<tr><td>'.$packageid.'</td>';
-//                    echo '<td>'.$signing.'</td>';
-//                    echo '<td>'.$statusid.'</td>';
-//                    echo '<td>'.$coeriertype.'</td>';
-//                    echo '<td>'.$customerid.'</td></tr>';
-//                }
-//                $loginid = ("SELECT SendCustomerID, BodeID FROM Login WHERE Username='$username'");
-//                $control = mysqli_query($database, $loginid);
-//                mysqli_fetch_assoc($control);
+                include "../database.php";
+                $result = mysqli_query($database, "SELECT Title, Length, Height, Width, Weight, StatusType , CreationDate, SendDate, DeliverDate FROM Package P JOIN Status S ON P.PackageID = S.PackageID WHERE SendCustomerID = $senduserid AND StatusType = 3");
+                $row = mysqli_fetch_assoc($result);
+                while($row){
+                        print("<tr><td>".$row["Title"]."</td>");
+                        
+                        if($row["StatusType"]==0){
+                            print("<td>Pakket is geregistreed</td>");
+                        } if($row["StatusType"]==1){
+                            print("<td>Pakket is in behandeling</td>");
+                        } if($row["StatusType"]==2){
+                            print("<td>Pakket is onderweg</td>");
+                        } if($row["StatusType"]==3){
+                            print("<td>Pakket is afgeleverd</td>");
+                        }
+                        
+                        print("<td>".$row["Length"]." cm </td>");
+                        print("<td>".$row["Height"]." cm </td>");
+                        print("<td>".$row["Width"]." cm </td>");
+                        print("<td>".$row["Weight"]." kg </td>");
+                        print("<td>".$row["CreationDate"]." </td>");
+                        print("<td>".$row["SendDate"]." </td>");
+                        print("<td>".$row["DeliverDate"]." </td></tr>");
+                        $row = mysqli_fetch_assoc($result);
+                }
                 
                 mysqli_close($database);               
             ?>
